@@ -1,0 +1,74 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* section styling */
+section {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    border: 2px solid salmon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* the map */
+
+#map > .img {
+    height: 80vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.img > img {
+    height: 100%;
+}
+
+
+
+/* culture and nature */
+
+.wrapper {
+    border: 2px solid seagreen;
+    width: 80vw;
+}
+
+.carousel {
+    border: 2px solid sandybrown;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.carousel > li {
+    list-style: none;
+    margin-left: 5%;
+    margin-bottom: 10%;
+}
+
+.carousel > li:first-child {
+    margin-left: 0;
+}
+
+article {
+    width: 300px;
+    height: 100%;
+}
+
+article > img {
+    width: 100%;
+    padding: 0;
+}
+
+
+/* for now to format the layout */
+.description, header {
+    display: none;
+}
+
+nav {
+    position: fixed;
+    z-index: 9;
+}
