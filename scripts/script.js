@@ -8,6 +8,7 @@ function scroll() {
     map.scrollLeft = (map.scrollWidth - map.clientWidth) / 2;
 }
 
+
 // section - .slider buttons
 const btnLeft = document.querySelector('.btnLeft');
 const btnRight = document.querySelector('.btnRight');

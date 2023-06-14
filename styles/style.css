@@ -45,7 +45,7 @@ main > section {
 /* culture and nature */
 
 .wrapper {
-    width: 70vw;
+    width: 80vw;
 }
 
 .carousel {
@@ -120,11 +120,11 @@ article > a {
 
 
 .wrapper > .btnLeft {
-    left: -50px;
+    left: -40px;
 }
 
 .wrapper > .btnRight {
-    right: -50px;
+    right: -40px;
 }
 
 
@@ -150,13 +150,29 @@ article > a {
 nav {
     z-index: 99;
     position: fixed;
-    top: 0;
+    top: 6vh;
 }
 
 nav > ul {
     list-style: none;
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
 }
 
-nav > ul > li > a {
+nav a {
     text-decoration: none;
+    color: black;
+}
+
+nav a[href="#map"]:hover {
+    color: rgba(239, 210, 199, 1);
+}
+
+nav a[href="#culture"]:hover {
+    color: rgb(175, 102, 34);
+}
+
+nav a[href="#nature"]:hover {
+    color: rgb(66, 155, 138);
 }
