@@ -19,6 +19,95 @@ main {
     scroll-behavior: smooth;
 }
 
+/* navigation - mobile */
+
+nav {
+    z-index: 99;
+    position: fixed;
+    top: 6vh;
+}
+
+nav > ul {
+    list-style: none;
+    display: flex;
+    width: 70vw;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a[href="#map"]:hover {
+    color: rgba(239, 210, 199, 1);
+}
+
+nav a[href="#culture"]:hover {
+    color: rgb(175, 102, 34);
+}
+
+nav a[href="#nature"]:hover {
+    color: rgb(66, 155, 138);
+}
+
+#navOpen {
+    display: none;
+}
+
+/* mobile navigation */
+
+@media screen and (max-width: 600px) {
+    
+    nav {
+        height: 100vh;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    nav > .navLinks {
+        width: 0;
+        display: none;
+    }
+
+    .navBtn {
+        align-self: flex-end;
+    }
+
+    #navOpen {
+        display: block;
+        position: absolute;
+        top: 5vh;
+        right: calc(7.5vw - .8ch);
+        font-size: 2em;
+    }
+
+    /* navigation overlay opened on click */
+
+    .open {
+        width: 100vw;
+        background: rgba(44, 76, 73, 0.9);
+        transition: 0.5s;
+    }
+
+
+    .open > .navLinks {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+
+}
+
+
 /* section styling */
 
 main > section {
@@ -45,14 +134,16 @@ main > section {
 /* culture and nature */
 
 .wrapper {
-    width: 80vw;
+    position: relative;
+    width: 100vw;
 }
 
 .carousel {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    transition: 0.5s;
+    width: 70vw;
+    margin: auto;
 }
 
 .carousel > li {
@@ -65,14 +156,13 @@ main > section {
 }
 
 article {
-    width: 300px;
-    height: 440px;
+    width: 245px;
+    height: 390px;
     position: relative;
 }
 
 article > img {
     width: 100%;
-    padding: 0;
 }
 
 article > h2 {
@@ -84,7 +174,7 @@ article > button {
     display: block;
 }
 
-article > button, .slider {
+article > button, .slider, #navOpen {
     background-color: transparent;
     border: none;
     font-weight: bold;
@@ -99,17 +189,13 @@ article > a {
     bottom: 0;
 }
 
-.wrapper {
-    position: relative;
-}
-
 .wrapper > .slider {
     position: absolute;
-    height: 440px;
-    font-size: 5em;
-    font-weight: 300;
+    width: 15vw;
+    height: 390px;
+    font-size: 4em;
     font-family: monospace;
-    z-index: 99;
+    z-index: 1;
     color: rgba(239, 210, 199, 0.5);
 }
 
@@ -120,11 +206,11 @@ article > a {
 
 
 .wrapper > .btnLeft {
-    left: -40px;
+    left: 0;
 }
 
 .wrapper > .btnRight {
-    right: -40px;
+    right: 0;
 }
 
 
@@ -147,32 +233,3 @@ article > a {
     display: none;
 }
 
-nav {
-    z-index: 99;
-    position: fixed;
-    top: 6vh;
-}
-
-nav > ul {
-    list-style: none;
-    display: flex;
-    width: 80vw;
-    justify-content: space-between;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-}
-
-nav a[href="#map"]:hover {
-    color: rgba(239, 210, 199, 1);
-}
-
-nav a[href="#culture"]:hover {
-    color: rgb(175, 102, 34);
-}
-
-nav a[href="#nature"]:hover {
-    color: rgb(66, 155, 138);
-}
