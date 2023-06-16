@@ -125,15 +125,61 @@ main > section {
 
 /* the map */
 
-#map > .img {
+#map > .map {
     height: 85vh;
+    width: 151vh;
     overflow-x: scroll;
     overflow-y: hidden;
+    position: relative;
 }
 
-.img > img {
+#map .img, #map .points {
+    height: 100%;
+    width: inherit;
+    position: absolute;
+}
+
+.img img {
     height: 100%;
 }
+
+.points {
+    z-index: 10;
+}
+
+.points > div {
+    cursor: pointer;
+    width: 3vh;
+    height: 3vh;
+    border-radius: 50%;
+    position: relative;
+}
+
+.points > div:hover {
+    background: rgba(255, 206, 81, 0.4);
+}
+
+.points > .item-c-1 {
+    top: 41.7%;
+    left: 39.487%;
+}
+
+.points > .item-c-2 {
+    top: 29.97%;
+    left: 52.455%;
+}
+
+.points > .item-c-3 {
+    top: 6.1%;
+    left: 22.2%;
+}
+
+.points > .item-c-4 {
+    top: 48%;
+    left: 5.57%;
+}
+
+ 
 
 
 /* culture and nature */
@@ -210,6 +256,25 @@ article .icon {
     filter: invert(25%) sepia(22%) saturate(603%) hue-rotate(125deg) brightness(99%) contrast(96%);
 }
 
+article > .btn-close-popup {
+    display: none;
+}
+
+/* map: #article-popup*/
+#article-popup {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 4px rgba(239, 210, 199, 1);
+    padding: 2em;
+    z-index: 99;
+}
+
+#article-popup > .btn-close-popup {
+    display: block;
+}
+
+/* slider buttons: */
+
 .wrapper > .slider {
     position: absolute;
     font-size: 4em;
@@ -237,12 +302,12 @@ article .icon {
 
 /* hide scrollbars for the map and for sections */
 /* Chrome, Safari and Opera */
-.carousel::-webkit-scrollbar, .img::-webkit-scrollbar {
+.carousel::-webkit-scrollbar, .map::-webkit-scrollbar {
     display: none;
   }
   
   /* IE, Edge and Firefox */
-  .carousel, .img {
+  .carousel, .map {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }

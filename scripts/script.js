@@ -3,7 +3,7 @@
 window.addEventListener('load', scroll);
 
 function scroll() {
-    let map = document.querySelector('.img');
+    let map = document.querySelector('.map');
     map.scrollLeft = (map.scrollWidth - map.clientWidth) / 2;
 }
 
@@ -26,6 +26,37 @@ function toggleNav() {
     } 
     btnOpenNav.innerHTML = '&#9776;';
     btnOpenNav.style.color = 'rgb(44, 76, 73)';
+}
+
+
+// map
+const points = document.querySelectorAll('.cul');
+
+points.forEach(point => point.addEventListener('click', articlePopUp));
+
+function articlePopUp(event) {
+    
+    
+    if (event.target.classList[0] == 'cul') {
+        const article = document.getElementsByClassName(event.target.classList[1]);
+        if (!document.getElementById('article-popup')) {
+            const copyArticle = article[1].cloneNode(true);
+            copyArticle.setAttribute('id', 'article-popup')
+            document.body.appendChild(copyArticle);
+            return;
+    
+        } else {
+            document.getElementById('article-popup').remove();
+        }
+    }
+
+    if (event.target.classList[0] == 'btn-close-popup') {
+        document.getElementById('article-popup').remove();
+    }
+    
+    
+    
+
 }
 
 
