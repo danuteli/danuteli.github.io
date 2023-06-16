@@ -21,9 +21,11 @@ function toggleNav() {
     nav.classList.toggle('open');
     if(nav.classList.contains('open')) {
         btnOpenNav.innerHTML = '&#9783;';
+        btnOpenNav.style.color = 'rgb(239, 210, 199)';
         return;
     } 
     btnOpenNav.innerHTML = '&#9776;';
+    btnOpenNav.style.color = 'rgb(44, 76, 73)';
 }
 
 
@@ -40,8 +42,7 @@ const article = document.querySelector('article');
 function toTheLeft() {
     const carouselWidth = carousel.clientWidth;
     const articleWidth = article.clientWidth;
-    carousel.scrollLeft -= slideWidth(carouselWidth, articleWidth);
-        
+    carousel.scrollLeft -= slideWidth(carouselWidth, articleWidth);       
 }
 
 

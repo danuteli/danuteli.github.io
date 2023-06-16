@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    color: rgba(44, 76, 73, 1);
 }
 
 body {
@@ -27,7 +28,7 @@ nav {
     top: 6vh;
 }
 
-nav > ul {
+nav > .navLinks {
     list-style: none;
     display: flex;
     width: 70vw;
@@ -36,7 +37,7 @@ nav > ul {
 
 nav a {
     text-decoration: none;
-    color: black;
+    font-size: 1.2em;
 }
 
 nav a[href="#map"]:hover {
@@ -92,7 +93,7 @@ nav a[href="#nature"]:hover {
 
     .open {
         width: 100vw;
-        background: rgba(44, 76, 73, 0.9);
+        background: rgba(44, 76, 73, 0.95);
         transition: 0.5s;
     }
 
@@ -104,6 +105,10 @@ nav a[href="#nature"]:hover {
         flex-direction: column;
         align-items: center;
     } 
+
+    .navLinks a {
+        color: rgba(239, 210, 199, .8);
+    }
 
 }
 
@@ -167,11 +172,20 @@ article > img {
 
 article > h2 {
     height: 2em;
-    margin-bottom: 0.4em;
+    font-size: 1.3em;
+    margin-bottom: 0.8em;
+}
+
+article > p, article > a {
+    line-height: 1em;
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 80%;
 }
 
 article > button {
     display: block;
+    margin-top: 0.8em;
 }
 
 article > button, .slider, #navOpen {
@@ -183,20 +197,26 @@ article > button, .slider, #navOpen {
 
 article > a {
     text-decoration: none;
-    color: black;
     font-weight: bold;
     position: absolute;
-    bottom: 0;
+    bottom: 0.5em;
+}
+
+article .icon {
+    height: 18px;
+    position: relative;
+    top: 5px;
+    margin-right: 8px;
+    filter: invert(25%) sepia(22%) saturate(603%) hue-rotate(125deg) brightness(99%) contrast(96%);
 }
 
 .wrapper > .slider {
     position: absolute;
-    width: 15vw;
-    height: 390px;
     font-size: 4em;
     font-family: monospace;
     z-index: 1;
     color: rgba(239, 210, 199, 0.5);
+    top: 1em;
 }
 
 .slider:hover {
@@ -206,11 +226,11 @@ article > a {
 
 
 .wrapper > .btnLeft {
-    left: 0;
+    left: 7.5vw;
 }
 
 .wrapper > .btnRight {
-    right: 0;
+    right: 7.5vw;
 }
 
 
