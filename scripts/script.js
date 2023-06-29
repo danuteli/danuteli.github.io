@@ -66,153 +66,63 @@ function articlePopUp(event) {
     }
 }
 
-// slide carousel
+// if carousel on scroll - change active class for the dot
 
 var carousels = document.querySelectorAll('.slider-carousel');
 
-setTimeout(function(){
-    carousels.forEach(carousel => carousel.addEventListener('scroll', slideArticle));
-}, 500);
+carousels.forEach(carousel => carousel.addEventListener('scroll', changeActiveDot));
 
-
-function slideArticle(event) {
+function changeActiveDot(event) {
     let carousel = event.target;
+    let dots = carousel.parentNode.querySelectorAll('.dot');
 
-    let dots = (carousel.parentNode).querySelectorAll('.dot');
-
-    // define the width of the article
-    let widthForOneArticle = carousel.clientWidth;
-    console.log(widthForOneArticle);
-    
-    // get the current position from left side in scollWidth
     let currentPosition = carousel.scrollLeft;
-    let slideDirection;
+    let widthForOneArticle = Math.floor(carousel.scrollWidth / dots.length) - 1;
 
-    let dotPositions = [];
+    let dotPositions = getDotPositions(dots, widthForOneArticle);
 
     for (let i=0; i < dots.length; i++) {
-        dotPositions.push(i * widthForOneArticle);
+        if ((currentPosition >= dotPositions[i] && currentPosition < dotPositions[i+1]) || currentPosition >= dotPositions[i]) {
+            removePreviousActive(dots);
+            dots[i].classList.add('active');
+        } 
     }
+}
 
-    // remove the previous active class
-    for (let i = 0; i < dots.length; i++) {
-        if (dots[i].classList.contains('active')) {
-            dots[i].classList.remove('active');
+function removePreviousActive(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].classList.contains('active')) {
+            arr[i].classList.remove('active');
             return;
         }
     }
-
-    setTimeout(function () {
-        let currentPositionAfter = carousel.scrollLeft;
-        
-        if (currentPosition < currentPositionAfter) {
-            slideDirection = 'right';
-        } else if (currentPosition >= currentPositionAfter) {
-            slideDirection = 'left';
-        }
-
-        if (slideDirection == 'right' || slideDirection == 'left') {
-            carousel.removeEventListener('scroll', slideArticle);
-            setTimeout(function(){
-                carousel.addEventListener('scroll', slideArticle);
-               }, 1000);
-        }
-    }, 100);
-
-    setTimeout(function() {
-        console.log(slideDirection);
-
-        
-        let index = Math.floor(currentPosition / widthForOneArticle);
-        if (slideDirection == 'right') {
-            index += 1;
-            let slidingPosition = dotPositions[index];
-            carousel.scrollLeft = slidingPosition;
-            dots[index].classList.add('active');
-        } else if (slideDirection = 'left') {
-            let slidingPosition = dotPositions[index];
-            carousel.scrollLeft = slidingPosition;
-            dots[index].classList.add('active');
-        };
-
-    }, 120);
 }
 
-/*
-let culture = document.getElementById('culture');
-let nature = document.getElementById('nature');
-*/
-/*
-// check if an element is in viewport
-function isInViewport(elem) {
-    const rect = elem.getBoundingClientRect();
+function getDotPositions(dots, articleWidth) {
+    let dotPositions = [];
 
-    var isinview = (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    for (let i=0; i < dots.length; i++) {
+        dotPositions.push(i * articleWidth);
+    }
 
-    );
-    return isinview; 
+    return dotPositions;
 }
 
-if (isInViewport(culture)) {
-    positionSlider(section);
-} else if (isInViewport(nature)) {
-    positionSlider(section);
-}
 
-function positionSlider(section) {
-    let wrrapper = section.querySelector('.slider-wrapper');
+// click on dots
+var dots = document.querySelectorAll('.dot');
+dots.forEach(dot => dot.addEventListener('click', slideArticleOnClick));
+
+function slideArticleOnClick(event) {
+    let section = document.getElementById(event.target.parentNode.classList[1]);
     let carousel = section.querySelector('.slider-carousel');
-    let position = carousel.scrollLeft;
-    
+    let dots = section.querySelectorAll('.dot');
+    let dotPositions = getDotPositions(dots, carousel.clientWidth);
+    let dot = event.target;
+    let dotIndex = Array.prototype.indexOf.call(dot.parentNode.children, dot);
+
+    carousel.scrollLeft = dotPositions[dotIndex];
 }
-
-function setArticlePosition(elem) {
-    let carousel = elem;
-    let wrapper = carousel.parentNode;
-    console.log(carousel);
-    let articles = carousel.querySelectorAll('article');
-    let dots = wrapper.querySelectorAll('.dot');
-
-    // get the index of the previous dot and remove the active class
-    let prevDotIndex;
-    for (let i = 0; i < dots.length; i++) {
-        if (dots[i].classList.contains('active')) {
-            dots[i].classList.remove('active');
-            prevDotIndex = i;
-        }
-    }
-
-    // get the width of the carousel
-    let carouselWidth  = carousel.clientWidth;
-
-    // get the positon of the previous article
-    let positionOfPrevArticle = prevDotIndex * carouselWidth;
-
-    // get the current scroll position
-    let positionCurrent = carousel.scrollLeft;
-
-    // define the difference between previous position and the current position
-    let difference = positionCurrent - positionOfPrevArticle;
-
-    if (difference > 0) {
-        let nextDotIndex = prevDotIndex + 1;
-        let positionOfNextArticle = nextDotIndex * carouselWidth;
-        carousel.scrollLeft = positionOfNextArticle;
-        dots[nextDotIndex].classList.add('active');
-    } else if (difference < 0) {
-        let nextDotIndex = prevDotIndex - 1;
-        let positionOfNextArticle = nextDotIndex * carouselWidth;
-        carousel.scrollLeft = positionOfNextArticle;
-        dots[nextDotIndex].classList.add('active');
-    } else {
-        return;
-    }
-} 
-*/
 
 /*
 // show more article funciton
