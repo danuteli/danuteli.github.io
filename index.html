@@ -7,6 +7,25 @@
         <title>Other Latvia</title>
 
         <link rel="stylesheet" href="styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -15,7 +34,7 @@
             <h1>other latvia</h1>
         </header>
         <nav id="nav">
-            <div class="navBtn">
+            <div class="navBtn toggleBtn">
                 <button id="navOpen">&#9776;</button>
             </div>
             <ul class="navLinks">
@@ -28,10 +47,10 @@
             <!-- main content -->
             <section id="map">
                 <div class="map">
-                    <div class="img">
+                    <div class="map-img">
                         <img src="images/TheMAP.png" alt="Map of Latvia">
                     </div>
-                    <div class="points">
+                    <div class="map-points">
                         <div class="point item-c-1"></div>
                         <div class="point item-c-2"></div>
                         <div class="point item-c-3"></div>
@@ -44,145 +63,167 @@
             </section>
 
             <section id="culture">
-                <div class="wrapper">
-                    <button class="slider btnLeft culture">&#10092;</button>
-                    <button class="slider btnRight culture">&#10093;</button>
-                    <ul class="carousel culture">
+                <div class="slider-wrapper">
+                    <ul class="slider-carousel culture">
                         <li>
                             <article class="item-c-1">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/dubulti.jpg" alt="Dubulti art station">
-                                <h2>art station DUBULTI</h2>
-                                <p>
-                                    The only modern art space in Europe that is located in a functioning railway station
-                                </p> 
-                                <p class="description">
-                                    A functional railway station in Dubulti has existed as early as 1877 however the current Modernist style built in concrete building resembling a breaking wave was created a whole century later in 1977. 
-                                    Designed by the Soviet architect Igors Javeins (1903—1980) Dubulti railway station served as the most modern station building in the Latvian Soviet Socialist Republic. About eight years ago the station went trough renovation and now serves as an excellent example of combining transport, culture and public administration resources for making a unique platform especially for modern art related exhibitions 
-a                                   accessible to everyone.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/M%C4%81kslas+stacija+%22Dubulti%22/@56.9695149,23.773335,17z/data=!3m1!4b1!4m6!3m5!1s0x46eedd0eaa73d077:0x43c8e9e78c203c78!8m2!3d56.969512!4d23.7759099!16s%2Fg%2F11g86m4dnn" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
-                                
+                                <div class="article-img">
+                                    <img src="images/dubulti.jpg" alt="Dubulti art station">
+                                </div>
+                                <div class="article-text">
+                                    <h2>art station DUBULTI</h2>
+                                    <p>
+                                        The only modern art space in Europe that is located in a functioning railway station
+                                    </p> 
+                                    <p class="description">
+                                        A functional railway station in Dubulti has existed as early as 1877 however the current Modernist style built in concrete building resembling a breaking wave was created a whole century later in 1977. 
+                                        Designed by the Soviet architect Igors Javeins (1903—1980) Dubulti railway station served as the most modern station building in the Latvian Soviet Socialist Republic. About eight years ago the station went trough renovation and now serves as an excellent example of combining transport, culture and public administration resources for making a unique platform especially for modern art related exhibitions 
+    a                                   accessible to everyone.
+                                    </p>
+                                    <button class="showMore" >show more</button>
+                                    <a href="https://www.google.com/maps/place/M%C4%81kslas+stacija+%22Dubulti%22/@56.9695149,23.773335,17z/data=!3m1!4b1!4m6!3m5!1s0x46eedd0eaa73d077:0x43c8e9e78c203c78!8m2!3d56.969512!4d23.7759099!16s%2Fg%2F11g86m4dnn" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                         <li>
                             <article class="item-c-2">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/krimulda.jpg" alt="Krimulda Manor">
-                                <h2>historical center of KRIMULDA</h2> 
-                                <p>
-                                    The feeling of a small and peaceful village in the territory of the manor and its historical outbuildings. Surrounded by nature with a view over the valley of the river - silence, peace and connection with history
-                                </p>
-                                <p class="description">
-                                    Sitting on the brink of the ancient Gauja valley is the very heart of Krimulda's historical centre. One of the most notable examples of a classic villa to be found in the whole of Latvia. 
-                                    Built in 1822 by Prince Johan George Liven the Neoclassical cube-like structure decorated by a massive porch has witnesst two centuries worth of history including the latter almost half-century until today as being a 
-                                    certified rehabilitation centre. The scenic view of the primeval valley from the precipice terrace, the balcony, or the little tower makes for a truly breath-taking experience that can only further be enhanced by a 
-                                    journey in the cable car linking both banks of the Gauja river.
+                                <div class="article-img">
+                                    <img src="images/krimulda.jpg" alt="Krimulda Manor">
+                                </div>
+                                <div class="article-text">
+                                    <h2>historical center of KRIMULDA</h2> 
+                                    <p>
+                                        The feeling of a small and peaceful village in the territory of the manor and its historical outbuildings. Surrounded by nature with a view over the valley of the river - silence, peace and connection with history
+                                    </p>
+                                    <p class="description">
+                                        Sitting on the brink of the ancient Gauja valley is the very heart of Krimulda's historical centre. One of the most notable examples of a classic villa to be found in the whole of Latvia. 
+                                        Built in 1822 by Prince Johan George Liven the Neoclassical cube-like structure decorated by a massive porch has witnesst two centuries worth of history including the latter almost half-century until today as being a 
+                                        certified rehabilitation centre. The scenic view of the primeval valley from the precipice terrace, the balcony, or the little tower makes for a truly breath-taking experience that can only further be enhanced by a 
+                                        journey in the cable car linking both banks of the Gauja river.
 
-                                    History is literary to be found on every corner in Krimulda as for example the stable, built-in 1893, serves as an excellent example of traditional asymmetric style construction using broken boulders. 
-                                    Also on the estate, you can view the steward’s house, a barn, an oasthouse, and Swiss house - one of the last remaining examples of the boarding-house type buildings.
-                                    They make one clearly imagine the former life that was led here.
+                                        History is literary to be found on every corner in Krimulda as for example the stable, built-in 1893, serves as an excellent example of traditional asymmetric style construction using broken boulders. 
+                                        Also on the estate, you can view the steward’s house, a barn, an oasthouse, and Swiss house - one of the last remaining examples of the boarding-house type buildings.
+                                        They make one clearly imagine the former life that was led here.
 
-                                    "Almost as many as there are berries and flowers to be found in Latvia there are equal amounts of diffeent wines". Such is the saying of local winemaker Jānis Mikans. Krimulda's manor's winery is rich for producing and evergrowing 
-                                    list of different varieties of wines, liqueurs, a type of calvados and also gin created from locally grown produce and offering the unique chance of tasting these beverages shall provide further learning about local history and traditions.
+                                        "Almost as many as there are berries and flowers to be found in Latvia there are equal amounts of diffeent wines". Such is the saying of local winemaker Jānis Mikans. Krimulda's manor's winery is rich for producing and evergrowing 
+                                        list of different varieties of wines, liqueurs, a type of calvados and also gin created from locally grown produce and offering the unique chance of tasting these beverages shall provide further learning about local history and traditions.
 
-                                    The 13th century medieval castle once schorched by fire with only ruins remaining to tell of its former glory still offers a view worthy of the name it is often given "Bellevue" meaning "beautiful view" in French.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/Krimuldas+Mui%C5%BEa/@57.167685,24.8274663,17z/data=!4m10!1m2!2m1!1skrimulda+manor!3m6!1s0x46e94e2568e58e47:0x611675587ef927db!8m2!3d57.167685!4d24.829655!15sCg5rcmltdWxkYSBtYW5vcloQIg5rcmltdWxkYSBtYW5vcpIBEnRvdXJpc3RfYXR0cmFjdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOMU9TMVVabEpSRUFF4AEA!16s%2Fg%2F1hc0gpzgm?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                        The 13th century medieval castle once schorched by fire with only ruins remaining to tell of its former glory still offers a view worthy of the name it is often given "Bellevue" meaning "beautiful view" in French.
+                                    </p>
+                                    <button class="showMore">show more</button>
+                                    <a href="https://www.google.com/maps/place/Krimuldas+Mui%C5%BEa/@57.167685,24.8274663,17z/data=!4m10!1m2!2m1!1skrimulda+manor!3m6!1s0x46e94e2568e58e47:0x611675587ef927db!8m2!3d57.167685!4d24.829655!15sCg5rcmltdWxkYSBtYW5vcloQIg5rcmltdWxkYSBtYW5vcpIBEnRvdXJpc3RfYXR0cmFjdGlvbpoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VOMU9TMVVabEpSRUFF4AEA!16s%2Fg%2F1hc0gpzgm?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                         <li>
                             <article class="item-c-3">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/mazirbe.jpg" alt="Fishing boat graveyard">
-                                <h2>fishing boat graveyard in MAZIRBE</h2>
-                                <p>
-                                    Fishing boats and their parts that were laid out on the Mazirbe coast in 1960s, are now gradually surrounded by forest
-                                </p>
-                                <p class="description">
-                                    There is no small number of fishing boats that were forcefully laid to rest in many seaside villages during the 60's Soviet ban of individual fishing and Mazirbe's boat graveyard serves as one such location were it is still evident today for some boats or what is left of them still remain. Until 2nd World War there were around 48 boats however today it's hard tell as nature slowly reclaims the old wrecks.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/Mazirbe+Boat+Cemetery/@57.6881444,22.3142626,15.69z/data=!4m10!1m2!2m1!1smazirbes+laivu+kaps%C4%93ta!3m6!1s0x46f1fd25ec2bbea9:0xd58eb03d9cbd288c!8m2!3d57.6890649!4d22.317299!15sChdtYXppcmJlcyBsYWl2dSBrYXBzxJN0YZIBCGNlbWV0ZXJ54AEA!16s%2Fg%2F11c1xdsy59?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                <div class="article-img">
+                                    <img src="images/mazirbe.jpg" alt="Fishing boat graveyard">
+                                </div>
+                                <div class="article-text">
+                                    <h2>fishing boat graveyard in MAZIRBE</h2>
+                                    <p>
+                                        Fishing boats and their parts that were laid out on the Mazirbe coast in 1960s, are now gradually surrounded by forest
+                                    </p>
+                                    <p class="description">
+                                        There is no small number of fishing boats that were forcefully laid to rest in many seaside villages during the 60's Soviet ban of individual fishing and Mazirbe's boat graveyard serves as one such location were it is still evident today for some boats or what is left of them still remain. Until 2nd World War there were around 48 boats however today it's hard tell as nature slowly reclaims the old wrecks.
+                                    </p>
+                                    <button class="showMore">show more</button>
+                                    <a href="https://www.google.com/maps/place/Mazirbe+Boat+Cemetery/@57.6881444,22.3142626,15.69z/data=!4m10!1m2!2m1!1smazirbes+laivu+kaps%C4%93ta!3m6!1s0x46f1fd25ec2bbea9:0xd58eb03d9cbd288c!8m2!3d57.6890649!4d22.317299!15sChdtYXppcmJlcyBsYWl2dSBrYXBzxJN0YZIBCGNlbWV0ZXJ54AEA!16s%2Fg%2F11c1xdsy59?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                         <li>
                             <article class="item-c-4">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/karaosta.jpg" alt="Karaosta">
-                                <h2>former military territory KARAOSTA</h2>
-                                <p>
-                                    As a closed military territory during the Soviet era, this part of the city of Liepaja currently stands out from the rest of the city with its harshness and unique functionality in architecture and objects built for military purposes
-                                </p> 
-                                
-                                <p class="description">
-                                    In 1890. within the nothern part of the city of Liepāja by the order of then Tsar of Russia  Alexander III a completely autonomous extensive fortress and military city was 
-                                    constructed. Originally named Port of the Emperor Alexander III now known simply as Karosta (War Port) for it is in fact the largest historical military garrison in the Baltics constituting almost a third of Liepaja's territory 
+                                <div class="article-img">
+                                    <img src="images/karaosta.jpg" alt="Karaosta">
+                                </div>
+                                <div class="article-text">
+                                    <h2>former military territory KARAOSTA</h2>
+                                    <p>
+                                        As a closed military territory during the Soviet era, this part of the city of Liepaja currently stands out from the rest of the city with its harshness and unique functionality in architecture and objects built for military purposes
+                                    </p> 
+                                    
+                                    <p class="description">
+                                        In 1890. within the nothern part of the city of Liepāja by the order of then Tsar of Russia  Alexander III a completely autonomous extensive fortress and military city was 
+                                        constructed. Originally named Port of the Emperor Alexander III now known simply as Karosta (War Port) for it is in fact the largest historical military garrison in the Baltics constituting almost a third of Liepaja's territory 
 
-                                    Karosta holds many unique locales of great historical value within its boundaries. One of such places is the only military prison in Europe open to tourists named 
-                                    Karosta Prison. Its inmates at the time were revolutionaries, sailors of the Tsar's Navy and non-commissioned officers, German deserters, 'enemies of the state' during the 
-                                    Stalin's rule soldiers of the Soviet army and the Latvian army. Now the prison serves to tell of its storied past and for them true thrillseekers one can even spend a night for it is recognized as the most unusual and surprising hotel in the world.
+                                        Karosta holds many unique locales of great historical value within its boundaries. One of such places is the only military prison in Europe open to tourists named 
+                                        Karosta Prison. Its inmates at the time were revolutionaries, sailors of the Tsar's Navy and non-commissioned officers, German deserters, 'enemies of the state' during the 
+                                        Stalin's rule soldiers of the Soviet army and the Latvian army. Now the prison serves to tell of its storied past and for them true thrillseekers one can even spend a night for it is recognized as the most unusual and surprising hotel in the world.
 
-                                    Built from 1903. to 1904. The Karosta Manege facility could accommodate more than whopping 4000 people and thus was used for physical training exercises of sailors as for official receptions and honorary dinners for garrison sailors. Though time has not spared this historic building and only the walls of the Manege remain the former grandeur of the building can still be felt even today.
+                                        Built from 1903. to 1904. The Karosta Manege facility could accommodate more than whopping 4000 people and thus was used for physical training exercises of sailors as for official receptions and honorary dinners for garrison sailors. Though time has not spared this historic building and only the walls of the Manege remain the former grandeur of the building can still be felt even today.
 
-                                    The stately red towering building is an outstanding example of industrial architecture and an integral part of Karosta's scenery with its original purpose of supplying water lost since 1989. During summer season the 
-                                    water tower serves for the noble purpose of holding open workshops for artists to create and people to experience not just the many different creative processes and exhibitions but also the grand building itself 
-                                    and its interiors.
+                                        The stately red towering building is an outstanding example of industrial architecture and an integral part of Karosta's scenery with its original purpose of supplying water lost since 1989. During summer season the 
+                                        water tower serves for the noble purpose of holding open workshops for artists to create and people to experience not just the many different creative processes and exhibitions but also the grand building itself 
+                                        and its interiors.
 
-                                    The longest breakwater in Latvia - the Northern Breakwater - was built at the end of the 19th century as a crucial part of Liepāja's fortress and military port. A large parking lot by the Northern Breakwater serves as a rare spot to park your car and enjoy spectacular sunsets or drops of rain during stormier days. There are also lavatory facilities for full enjoyment of this historic locaton.
+                                        The longest breakwater in Latvia - the Northern Breakwater - was built at the end of the 19th century as a crucial part of Liepāja's fortress and military port. A large parking lot by the Northern Breakwater serves as a rare spot to park your car and enjoy spectacular sunsets or drops of rain during stormier days. There are also lavatory facilities for full enjoyment of this historic locaton.
 
-                                    Further up Karosta's northern shore lies the the impressive Fortification battery No. 1. or rather what is left standing after it was oficially demolished on November 1908. Commonly refered to as The Northern Fort only partially blown up parts of the artillery batteries and underground structures are still standing today signaling of its past glory and magnitude.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/Karosta,+Liep%C4%81jas+pils%C4%93ta,+LV-3414/@56.5499995,21.005556,14z/data=!3m1!4b1!4m6!3m5!1s0x46faa7afed16123f:0x97283f141f7660bc!8m2!3d56.55!4d21.005556!16zL20vMDMxeXI0?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                        Further up Karosta's northern shore lies the the impressive Fortification battery No. 1. or rather what is left standing after it was oficially demolished on November 1908. Commonly refered to as The Northern Fort only partially blown up parts of the artillery batteries and underground structures are still standing today signaling of its past glory and magnitude.
+                                    </p>
+                                    <button class="showMore">show more</button>
+                                    <a href="https://www.google.com/maps/place/Karosta,+Liep%C4%81jas+pils%C4%93ta,+LV-3414/@56.5499995,21.005556,14z/data=!3m1!4b1!4m6!3m5!1s0x46faa7afed16123f:0x97283f141f7660bc!8m2!3d56.55!4d21.005556!16zL20vMDMxeXI0?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                     </ul>
+                    <div class="slider-nav culture">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
             </section>
 
             <section id="nature">
-                <div class="wrapper">
-                    <button class="slider btnLeft nature">&#10092;</button>
-                    <button class="slider btnRight nature">&#10093;</button>
-                    <ul class="carousel nature">
+                <div class="slider-wrapper">
+                    <ul class="slider-carousel nature">
                         <li>
-                            <article class="item-n-1">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/akmenrags.jpg" alt="Akmenrags lighthouse">
-                                <h2>AKMENRAGS lighthouse</h2>
-                                <p>
-                                    Short sentence about the lighthouse
-                                </p> 
-                                <p class="description">
-                                    On the most dangerous western coast of Latvia where the sea has already claimed more than several shipwrecks stands tall a 37 m tall hope made of red brick lighting up its pair of beacons every few seconds for those navigating 
-                                    this rough area of the Baltic Sea. The Akmeņrags lighthouse. First built in 1884 but destroyed during World War I and then rebuilt in 1921. is a truly staggering place from which to marvel at sorrounding woods and the sea. 
-                                    That is if one can overcome 126 steps to reach the top of this towering building now open to public.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/Akme%C5%86raga+lighthouse/@56.8317918,21.0571742,17z/data=!3m1!4b1!4m6!3m5!1s0x46f0130b96b9c9ab:0x212edb9bc208adb1!8m2!3d56.8317918!4d21.0571742!16s%2Fg%2F121yb5h1?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                            <article id="item-n-1" class="item-n-1">
+                                <div class="article-img">
+                                    <img src="images/akmenrags.jpg" alt="Akmenrags lighthouse">
+                                </div>
+                                <div class="article-text">
+                                    <h2>AKMENRAGS lighthouse</h2>
+                                    <p>
+                                        Short sentence about the lighthouse
+                                    </p> 
+                                    <p class="description">
+                                        On the most dangerous western coast of Latvia where the sea has already claimed more than several shipwrecks stands tall a 37 m tall hope made of red brick lighting up its pair of beacons every few seconds for those navigating 
+                                        this rough area of the Baltic Sea. The Akmeņrags lighthouse. First built in 1884 but destroyed during World War I and then rebuilt in 1921. is a truly staggering place from which to marvel at sorrounding woods and the sea. 
+                                        That is if one can overcome 126 steps to reach the top of this towering building now open to public.
+                                    </p>
+                                    <button class="showMore">show more</button>
+                                    <a href="https://www.google.com/maps/place/Akme%C5%86raga+lighthouse/@56.8317918,21.0571742,17z/data=!3m1!4b1!4m6!3m5!1s0x46f0130b96b9c9ab:0x212edb9bc208adb1!8m2!3d56.8317918!4d21.0571742!16s%2Fg%2F121yb5h1?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                         <li>
-                            <article class="item-n-2">
-                                <button class="btn-close-popup" onclick="articlePopUp(event)">x</button>
-                                <img src="images/lielupe.jpg" alt="Lielupe white dune">
-                                <h2>LIELUPE white dune</h2>
-                                <p>
-                                    Short sentence about the 'White Dune' of Lielupe river.
-                                </p> 
-                                <p class="description">
-                                    The White Dune is located on the right shore of Lielupe near the city of Jūrmala. 15 to 17 meters high and 800m wide this natural marvel made of white sand was in fact created by the very river it stands by. 
-                                    In 1755 Lielupe managed to create the current entry into the RIgas Bay simultaneously creating Buļļupe from its old entry and also The White Dune. Popular among tourists and locals alike the dune offers a truly wonderful overlook over Lielupe and its entry into the sea.
-                                </p>
-                                <button class="showMore">show more</button>
-                                <a href="https://www.google.com/maps/place/Lielupe+White+Dune/@56.9904056,23.9396888,17z/data=!3m1!4b1!4m6!3m5!1s0x46eec4ba73e28c87:0x7565928cd0e71c39!8m2!3d56.9904056!4d23.9396888!16s%2Fg%2F11ckqn7vzv?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
-                                
+                            <article id="item-n-2" class="item-n-2">
+                                <div class="article-img">
+                                    <img src="images/lielupe.jpg" alt="Lielupe white dune">
+                                </div>
+                                <div class="article-text">
+                                    <h2>LIELUPE white dune</h2>
+                                    <p>
+                                        Short sentence about the 'White Dune' of Lielupe river.
+                                    </p> 
+                                    <p class="description">
+                                        The White Dune is located on the right shore of Lielupe near the city of Jūrmala. 15 to 17 meters high and 800m wide this natural marvel made of white sand was in fact created by the very river it stands by. 
+                                        In 1755 Lielupe managed to create the current entry into the RIgas Bay simultaneously creating Buļļupe from its old entry and also The White Dune. Popular among tourists and locals alike the dune offers a truly wonderful overlook over Lielupe and its entry into the sea.
+                                    </p>
+                                    <button class="showMore">show more</button>
+                                    <a href="https://www.google.com/maps/place/Lielupe+White+Dune/@56.9904056,23.9396888,17z/data=!3m1!4b1!4m6!3m5!1s0x46eec4ba73e28c87:0x7565928cd0e71c39!8m2!3d56.9904056!4d23.9396888!16s%2Fg%2F11ckqn7vzv?hl=en&entry=ttu" target="_blank"><img src="images/location-dot-solid.svg" alt="icon" class="icon">show on google maps</a>
+                                </div>
                             </article>
                         </li>
                     </ul>
+                    <div class="slider-nav nature">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
                 </div>
             </section>
 

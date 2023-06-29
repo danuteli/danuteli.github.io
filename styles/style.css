@@ -2,7 +2,22 @@
 * {
     margin: 0;
     padding: 0;
-    color: rgba(44, 76, 73, 1);
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: rgba(44, 76, 73, 0.9);
+}
+
+/* layout, font-family and desktop font-sizes */
+
+html {
+    font-size: 62.5%;
+    /*font-family: 'DM Sans', sans-serif; */
+    /*font-family: 'Nunito Sans', sans-serif; */
+    /* font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -10,17 +25,83 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
 }
 
-main {
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+p, button, a {
+    font-size: 1.8rem;
+}
+
+button, a {
+    font-weight: bold;
+}
+
+span {
+    cursor: pointer;    
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* section styling - map, culture, nature*/
+
+main > section {
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* navigation - mobile */
+header, footer {
+    width: 100vw;
+    background-color: rgba(239, 210, 199, 0.5);
+}
+
+header {
+    height: 100vh;
+    display: none;
+}
+
+footer {
+    height: 100vh;
+}
+
+/* mobile font-sizes*/
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        /* use slighter weight, formating (italics) or letter spacing */
+    }
+
+    p, button, a {
+        font-size: 1.6rem;
+    }
+    
+}
+
+/* desctop navigation */
 
 nav {
     z-index: 99;
@@ -29,15 +110,9 @@ nav {
 }
 
 nav > .navLinks {
-    list-style: none;
     display: flex;
     width: 70vw;
     justify-content: space-between;
-}
-
-nav a {
-    text-decoration: none;
-    font-size: 1.2em;
 }
 
 nav a[href="#map"]:hover {
@@ -83,18 +158,19 @@ nav a[href="#nature"]:hover {
 
     #navOpen {
         display: block;
-        position: absolute;
-        top: 5vh;
-        right: calc(7.5vw - .8ch);
-        font-size: 2em;
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+        font-size: 3.5rem;
     }
 
     /* navigation overlay opened on click */
 
     .open {
         width: 100vw;
-        background: rgba(44, 76, 73, 0.95);
+        background: rgba(44, 76, 73, 0.99);
         transition: 0.5s;
+        position: fixed;
     }
 
 
@@ -113,155 +189,178 @@ nav a[href="#nature"]:hover {
 }
 
 
-/* section styling */
-
-main > section {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 /* the map */
 
 #map > .map {
-    height: 85vh;
-    width: 151vh;
+    height: 95vh;
+    width: 169vh;
     overflow-x: scroll;
     overflow-y: hidden;
     position: relative;
 }
 
-#map .img, #map .points {
+#map .map-img, #map .map-points {
     height: 100%;
     width: inherit;
     position: absolute;
 }
 
-.img img {
+
+.map-img img {
     height: 100%;
+    opacity: 90%;
 }
 
-.points {
+.map-points {
     z-index: 10;
 }
 
-.points > div {
+.map-points > div {
     cursor: pointer;
-    width: 3vh;
-    height: 3vh;
+    width: 3.35vh;
+    height: 3.35vh;
     border-radius: 50%;
     position: relative;
 }
 
-.points > div:hover {
-    background: rgba(255, 206, 81, 0.4);
+.map-points > div:hover {
+    background: rgba(44, 76, 73, 0.7);
+    box-shadow: 0 0 20px rgba(44, 76, 73, 1);
 }
 
-.points > .item-c-1 {
+.map-points > .item-c-1 {
     top: 41.7%;
     left: 39.487%;
 }
 
-.points > .item-c-2 {
+.map-points > .item-c-2 {
     top: 29.97%;
     left: 52.455%;
 }
 
-.points > .item-c-3 {
+.map-points > .item-c-3 {
     top: 6.1%;
     left: 22.2%;
 }
 
-.points > .item-c-4 {
+.map-points > .item-c-4 {
     top: 48%;
     left: 5.57%;
 }
 
-.points > .item-n-1 {
+.map-points > .item-n-1 {
     top: 33%;
     left: 7.2%;
 }
 
-.points > .item-n-2 {
+.map-points > .item-n-2 {
     top: 22.7%;
     left: 41.55%;
-}
-
-.glow {
-    background-color: rgba(44, 76, 73, 0.5);
-    box-shadow: 0 0 30px rgba(44, 76, 73, 0.3);
-    transition: 0.5s ease-in-out;
 }
  
 
 
 /* culture and nature */
 
-.wrapper {
+.slider-wrapper {
     position: relative;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-.carousel {
+.slider-carousel {
     display: flex;
     overflow-x: scroll;
+    overflow-y: hidden;
     scroll-behavior: smooth;
-    width: 70vw;
     margin: auto;
 }
 
-.carousel > li {
-    list-style: none;
-    margin-left: 30px;
+@media only screen and (orientation: landscape) {
+    .slider-carousel, article {
+        width: 70vw;
+        height: 35vw;
+    }
+
+    @media only screen and (max-height: 40vw) {
+        .slider-carousel, article {
+            width: 140vh;
+            height: 70vh;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        .slider-carousel, article {
+            height: 40vw;
+        }
+
+        nav > .navLinks, .slider-carousel, article {
+            width: 80vw;
+        }
+    }
 }
 
-.carousel > li:first-child {
-    margin-left: 0;
-}
+
 
 article {
-    width: 245px;
-    height: 390px;
     position: relative;
+    display: flex;
 }
 
-article > img {
-    width: 100%;
+article div {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
 }
 
-article > h2 {
-    height: 2em;
-    font-size: 1.3em;
-    margin-bottom: 0.8em;
+.article-img > img {
+    height: 100%;
+    width: auto;
 }
 
-article > p, article > a {
-    line-height: 1em;
-    font-size: 0.9em;
-    font-weight: 500;
+.article-text {
+    padding: 2rem;
+}
+
+#culture .article-text {
+    background-color: rgba(44, 76, 73, 0.7);
+}
+
+#nature .item-n-1 {
+    background-color: rgba(151, 76, 61, .8);
+}
+
+#nature .item-n-2 {
+    background-color: rgba(94, 67, 55, .8);
+}
+
+.article-text h2, .article-text p, .article-text button {
+    color: white;
+}
+
+.article-text p {
     opacity: 80%;
 }
 
-article > button {
-    display: block;
-    margin-top: 0.8em;
+@media only screen and (orientation: portrait) {
+    .slider-carousel, article {
+        width: 40vh;
+        height: 80vh;
+    }
+
+    article {
+        flex-direction: column;
+    }
+    article div {
+        width: 100%;
+        height: 50%;
+    }
 }
 
-article > button, .slider, #navOpen {
-    background-color: transparent;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-article > a {
-    text-decoration: none;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0.5em;
-}
 
 article .icon {
     height: 18px;
@@ -271,16 +370,31 @@ article .icon {
     filter: invert(25%) sepia(22%) saturate(603%) hue-rotate(125deg) brightness(99%) contrast(96%);
 }
 
-article > .btn-close-popup {
-    display: none;
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
 }
+
+.slider-nav .dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: rgba(44, 76, 73, 0.2);
+}
+
+.slider-nav .active, .dot:hover {
+    background-color: rgba(44, 76, 73, 0.5);
+}
+
 
 /* map: #article-popup*/
 #article-popup {
     position: absolute;
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 0 4px rgba(239, 210, 199, 1);
-    padding: 2em;
+    padding: 2rem;
     z-index: 99;
 }
 
@@ -288,15 +402,43 @@ article > .btn-close-popup {
     display: block;
 }
 
+/* expanded article on 'show more'*/
+
+#expandedArticle {
+    width: 40vw;
+    height: fit-content;
+    margin: 0;
+    z-index: 999;
+    background: white;
+    padding: 5vw;
+    position: absolute;
+}
+
+#expandedArticle > h2 {
+    margin-bottom: 0;
+}
+
+#expandedArticle > .description, #expandedArticle > .closeBtn, .showMore {
+    display: block;
+}
+
+#expandedArticle > .showMore {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #expandedArticle {
+        width: 90vw;
+    }
+}
+
 /* slider buttons: */
 
 .wrapper > .slider {
     position: absolute;
-    font-size: 4em;
-    font-family: monospace;
     z-index: 1;
     color: rgba(239, 210, 199, 0.5);
-    top: 1em;
+    top: 1rem;
 }
 
 .slider:hover {
@@ -317,19 +459,19 @@ article > .btn-close-popup {
 
 /* hide scrollbars for the map and for sections */
 /* Chrome, Safari and Opera */
-.carousel::-webkit-scrollbar, .map::-webkit-scrollbar {
+.slider-carousel::-webkit-scrollbar, .map::-webkit-scrollbar {
     display: none;
   }
   
   /* IE, Edge and Firefox */
-  .carousel, .map {
+  .slider-carousel, .map {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
 
 
 /* for now to format the layout */
-.description, header {
+.description {
     display: none;
 }
 
