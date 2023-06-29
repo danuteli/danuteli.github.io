@@ -132,9 +132,35 @@ nav a[href="#nature"]:hover {
     display: none;
 }
 
+nav .active[href="#map"] {
+    color: rgba(239, 210, 199, 1);
+}
+
+nav .active[href="#culture"] {
+    color: rgb(231, 127, 29);
+}
+
+nav .active[href="#nature"] {
+    color: rgb(48, 207, 178);
+}
+
+
+
 /* mobile navigation */
 
 @media screen and (max-width: 600px) {
+
+    #nav:not(.open) .active {
+        display: block;
+        position: fixed;
+        width: fit-content;
+        height: fit-content;
+        top: 2.8rem;
+        left: 3rem;
+        z-index: 99;
+        font-size: 3.5rem;
+        cursor: default;
+    }
     
     nav {
         height: 100vh;
@@ -148,10 +174,11 @@ nav a[href="#nature"]:hover {
         top: 0;
     }
     
-    nav > .navLinks {
-        width: 0;
+    .navLinks a {
         display: none;
     }
+
+    
 
     .navBtn {
         align-self: flex-end;
@@ -174,6 +201,9 @@ nav a[href="#nature"]:hover {
         position: fixed;
     }
 
+    .open a {
+        display: block;
+    }
 
     .open > .navLinks {
         width: 100%;
@@ -181,12 +211,14 @@ nav a[href="#nature"]:hover {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
     } 
 
-    .navLinks a {
+    .open .navLinks a {
         color: rgba(239, 210, 199, .8);
         font-size: 1.8rem;
     }
+
 }
 
 

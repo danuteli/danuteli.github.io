@@ -38,6 +38,31 @@ function toggleNav() {
 }
 
 
+
+// change navigation styling on page scroll
+
+window.addEventListener('scroll', addActiveClassToTheNav);
+
+function addActiveClassToTheNav() {
+    let position = window.scrollY;
+    let section = document.querySelector('section');
+    let sectionHeight = section.clientHeight;
+
+    let navLinks = document.querySelectorAll('.navLinks a');
+
+    let sectionHeights = [0, sectionHeight/2, sectionHeight + sectionHeight/2, sectionHeight*2];
+
+    for (var i = 0; i<sectionHeights.length-1; i++) {
+        if (position > sectionHeights[i] && position < sectionHeights[i+1]) {
+            removePreviousActive(navLinks);
+            navLinks[i].classList.add('active');
+        }
+    }
+    
+}
+
+
+
 // map
 const points = document.querySelectorAll('.point');
 
@@ -65,6 +90,10 @@ function articlePopUp(event) {
         document.getElementById('article-popup').remove();
     }
 }
+
+
+
+
 
 // if carousel on scroll - change active class for the dot
 
