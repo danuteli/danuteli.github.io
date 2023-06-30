@@ -488,6 +488,7 @@ article .icon {
     position: absolute;
     bottom: 4.5rem;
     left: 1rem;
+    right: 1rem;
     line-height: 1;
     font-weight: 100;
     font-stretch: ultra-expanded;
@@ -516,8 +517,8 @@ article .icon {
 @media only screen and (max-width: 600px) {
     #article-popup {
         position: fixed;
-        top: 25%;
-        left: 25%;
+        top: 22.5vh;
+        left: calc((100vw - 40vh)/2);
     }
 }
 
