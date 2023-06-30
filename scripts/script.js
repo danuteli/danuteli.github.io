@@ -3,6 +3,7 @@
 // on loading - first section dot has class 'active'
 window.addEventListener('load', defaultScrollMap);
 window.addEventListener('load', defaultScrollSection);
+window.addEventListener('load', defaultActiveClass);
 
 function defaultScrollMap() {
     let map = document.querySelector('.map');
@@ -13,6 +14,12 @@ function defaultScrollSection() {
     let sliderNav = document.querySelectorAll('.slider-nav');
     for (let i = 0; i < sliderNav.length; i++) {
         sliderNav[i].children[0].classList.add('active');
+    }
+}
+
+function defaultActiveClass() {
+    if (window.scrollY == 0) {
+        document.querySelector('nav a').classList.add('active');
     }
 }
 
@@ -30,11 +37,9 @@ function toggleNav() {
     nav.classList.toggle('open');
     if(nav.classList.contains('open')) {
         btnOpenNav.innerHTML = '&#9866;';
-        btnOpenNav.style.color = 'rgb(239, 210, 199)';
         return;
     } 
     btnOpenNav.innerHTML = '&#9776;';
-    btnOpenNav.style.color = 'rgb(44, 76, 73)';
 }
 
 
@@ -42,6 +47,7 @@ function toggleNav() {
 // change navigation styling on page scroll
 
 window.addEventListener('scroll', addActiveClassToTheNav);
+
 
 function addActiveClassToTheNav() {
     let position = window.scrollY;
@@ -63,35 +69,73 @@ function addActiveClassToTheNav() {
 
 
 
+
 // map
 const points = document.querySelectorAll('.point');
 
-points.forEach(point => point.addEventListener('click', articlePopUp));
+points.forEach(point => point.addEventListener('mouseover', articlePopUp));
+
+
+
 
 function articlePopUp(event) {
     
-    
     if (event.target.classList[0] == 'point') {
+        // find the relevant article
         const article = document.getElementsByClassName(event.target.classList[1]);
+        // if popup not opened - get the data and display the short version of article
         if (!document.getElementById('article-popup')) {
-            const copyArticle = article[1].cloneNode(true);
-            copyArticle.setAttribute('id', 'article-popup')
-            document.body.appendChild(copyArticle);
-            const btn = copyArticle.querySelector('.showMore');
-            btn.addEventListener('click', toggleShowMore);
+            let position = event.target.getBoundingClientRect();
+            event.target.classList.add('active');
+            let img = article[1].querySelector('.article-img').cloneNode(true);
+            let title = article[1].querySelector('h2').cloneNode(true);
+            let closeBtn = document.createElement('button');
+            closeBtn.innerHTML = 'close';
+            closeBtn.classList.add('close');
+            let popup = document.createElement('div');
+            //let background = document.createElement('div');
+            popup.setAttribute('id', 'article-popup');
+            //background.setAttribute('id', 'popup-background');
+            
+            popup.appendChild(img);
+            popup.appendChild(title);
+            popup.appendChild(closeBtn);
+            document.body.appendChild(popup);
+            //document.body.appendChild(background);
+            if (document.body.clientWidth > 600) {
+                
+                popup.style.top = `${position.top - 100}px`;
+                popup.style.left = `${position.left + 30}px`;
+            }
+            
+            
+            
+            //const btn = copyArticle.querySelector('.showMore');
+            //btn.addEventListener('click', toggleShowMore);
             return;
     
-        } else {
-            document.getElementById('article-popup').remove();
-        }
+        } 
     }
-
+    // close popup on click on close button
+    /*
     if (event.target.classList[0] == 'btn-close-popup') {
         document.getElementById('article-popup').remove();
     }
+    */
 }
 
-
+window.onclick = function(event) {
+    if (document.getElementById('article-popup')) {
+        let article = document.getElementById('article-popup');
+        //let background = document.getElementById('popup-background');
+        if (!event.target.classList.contains('point') && !article.contains(event.target) || event.target.classList.contains('close')){
+            article.remove();   
+            (document.querySelector('.point.active').classList.remove('active'));
+            //background.remove();
+        }
+    }
+    
+}
 
 
 
