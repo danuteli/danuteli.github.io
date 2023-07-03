@@ -378,11 +378,11 @@ article div {
     background-color: rgba(44, 76, 73, 0.7);
 }
 
-#nature .item-n-1 {
+.slider-carousel.nature li:first-child {
     background-color: rgba(151, 76, 61, .8);
 }
 
-#nature .item-n-2 {
+.slider-carousel.nature li:nth-child(2) {
     background-color: rgba(94, 67, 55, .8);
 }
 
