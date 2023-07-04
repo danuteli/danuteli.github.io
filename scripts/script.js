@@ -5,6 +5,30 @@ window.addEventListener('load', defaultScrollMap);
 window.addEventListener('load', defaultScrollSection);
 window.addEventListener('load', defaultActiveClass);
 
+window.addEventListener('load', removeHeaderAfterSomeTime);
+
+function removeHeaderAfterSomeTime() {
+    if (document.querySelector('header').classList.contains('close')){
+        return;
+    }
+    setTimeout(closeHeader, 6000);
+}
+
+
+// header overlay
+let header = document.querySelector('header');
+header.addEventListener('click', closeHeader);
+
+function closeHeader() {
+    header.classList.add('animate');
+    setTimeout(function() {
+        header.classList.remove('animate');
+        header.classList.remove('header-open');
+    }, 2000);
+    
+}
+
+
 function defaultScrollMap() {
     let map = document.querySelector('.map');
     map.scrollLeft = (map.scrollWidth - map.clientWidth) / 2;

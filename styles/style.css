@@ -25,14 +25,20 @@ body {
     justify-content: center;
 }
 
-h1, h2 {
+h1 {
+    font-size: 6rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(239, 210, 199, 1),
+                1px 1px 1.2px rgba(239, 210, 199, 1),
+                1px 1px 1.4px rgba(239, 210, 199, 1);
+    color: rgba(44, 76, 73, 0.97);
+    font-weight: 300;
+}
+
+h2 {
     font-size: 3.5rem;
 }
-/*
-h2 {
-    font-size: 3rem;
-}
-*/
+
 p, button, a {
     font-size: 1.8rem;
 }
@@ -68,24 +74,65 @@ main > section {
     justify-content: center;
 }
 
-header, footer {
+footer {
     width: 100vw;
+    height: 50vh;
     background-color: rgba(239, 210, 199, 0.5);
 }
 
-header {
+
+/* header overlay */
+
+header.header-open {
     height: 100vh;
-    display: none;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background: rgba(44, 76, 73, 0.97);
+    cursor: pointer;
 }
 
-footer {
-    height: 50vh;
+header.header-open h2 {
+    font-weight: 300;
+    animation: glows 5s infinite;
 }
+
+@keyframes glows {
+    0%, 100% {
+        color: rgba(44, 76, 73, 1)
+    } 50% {
+        color: rgba(239, 210, 199, 0.2)
+    }
+}
+
+.animate {
+    animation: vanishes 2s ease-out 1;
+}
+
+@keyframes vanishes {
+    from {
+        opacity: 100%;
+    } to {
+        opacity: 0%;
+    }
+}
+
+header:not(.header-open) {
+    display:none;
+}
+
 
 /* mobile font-sizes*/
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 2.4rem;  /*  2.1 rem */
+        font-size: 5rem;  /*  2.1 rem */
     }
 
     h2 {
