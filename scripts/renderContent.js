@@ -9,7 +9,6 @@ titles.forEach(title => title.addEventListener('click', renderContent));
 
 function renderContent(event) {
     let article;
-    console.log(event.target);
     if (event.target.classList[0] == 'showMore') {
         let sectionName = event.target.classList[1];
         article = document.querySelector(`article.${sectionName}`);
@@ -40,6 +39,11 @@ function getContent(clone) {
     templateContent.querySelector('img').setAttribute('src', `${obj.imgSrc}`)
     templateContent.querySelector('h2').innerHTML = obj.title;
     templateContent.querySelector('p').innerHTML = obj.description;
+}
+
+
+function goBack() {
+    window.history.go(-1);
 }
 
 

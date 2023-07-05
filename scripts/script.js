@@ -4,8 +4,19 @@
 window.addEventListener('load', defaultScrollMap);
 window.addEventListener('load', defaultScrollSection);
 window.addEventListener('load', defaultActiveClass);
-
 window.addEventListener('load', removeHeaderAfterSomeTime);
+
+document.onreadystatechange = function() {
+    if (localStorage.firstVisit == 1) {
+        if (document.readyState == 'interactive') {
+            header.classList.remove('header-open');
+        }
+    }
+} 
+
+if (performance && performance.getEntriesByType( 'navigation' ).map( nav => nav.type ).includes( 'back_forward' )) {
+    localStorage.removeItem('data');
+}
 
 function removeHeaderAfterSomeTime() {
     if (document.querySelector('header').classList.contains('close')){
@@ -13,7 +24,6 @@ function removeHeaderAfterSomeTime() {
     }
     setTimeout(closeHeader, 6000);
 }
-
 
 // header overlay
 let header = document.querySelector('header');
@@ -25,9 +35,8 @@ function closeHeader() {
         header.classList.remove('animate');
         header.classList.remove('header-open');
     }, 2000);
-    
+    localStorage.setItem('firstVisit', 1);
 }
-
 
 function defaultScrollMap() {
     let map = document.querySelector('.map');

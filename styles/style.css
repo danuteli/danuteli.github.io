@@ -40,12 +40,17 @@ h2 {
     font-weight: 400;
 }
 
-p {
+p, small {
     cursor: default;
 }
 
 p, button, a {
     font-size: 1.8rem;
+}
+
+small {
+    font-size: 1.4rem;
+    color: white;
 }
 
 button, a {
@@ -82,7 +87,12 @@ main > section {
 footer {
     width: 100vw;
     height: 50vh;
-    background-color: rgba(239, 210, 199, 0.5);
+    background-color: rgba(239, 210, 199, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 
@@ -590,7 +600,7 @@ article .icon {
 }
 
 #article-popup img:hover {
-    opacity: 90%;
+    opacity: 70%;
 }
 
 #article-popup h2, #article-popup button {
