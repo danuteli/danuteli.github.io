@@ -37,6 +37,11 @@ h1 {
 
 h2 {
     font-size: 3.5rem;
+    font-weight: 400;
+}
+
+p {
+    cursor: default;
 }
 
 p, button, a {
@@ -96,12 +101,15 @@ header.header-open {
     justify-content: center;
     gap: 3rem;
     background: rgba(44, 76, 73, 0.97);
-    cursor: pointer;
 }
 
 header.header-open h2 {
     font-weight: 300;
     animation: glows 5s infinite;
+}
+
+.header-open:not(.animate):hover {
+    cursor: pointer;
 }
 
 @keyframes glows {
@@ -112,7 +120,7 @@ header.header-open h2 {
     }
 }
 
-.animate {
+.header-open.animate {
     animation: vanishes 2s ease-out 1;
 }
 
@@ -350,6 +358,35 @@ nav .active[href="#nature"] {
     top: 22.7%;
     left: 41.55%;
 }
+
+.map-points > .item-n-3 {
+    top: 22.45%;
+    left: 43.1%;
+}
+
+.map-points > .item-n-4 {
+    top: 15.5%;
+    left: 37.45%;
+}
+
+.map-points > .item-n-5 {
+    top: 9.5%;
+    left: 43.01%;
+}
+
+.map-points > .item-n-6 {
+    top: -8.45%;
+    left: 59.43%;
+}
+ .map-points > .item-n-7 {
+    top: 7.65%;
+    left: 35.65%;
+ }
+
+ .map-points > .item-n-8 {
+    top: 36.6%;
+    left: 79.85%;
+ }
  
 
 
@@ -415,13 +452,34 @@ article div {
 .article-img > img {
     height: 100%;
     width: auto;
+    opacity: 95%;
+}
+
+.article-img > img:hover {
+    opacity: 65%;
+    transition: .2s;
+    cursor: pointer;
 }
 
 .article-text {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex: 1;
 }
 
-#culture .article-text {
+.article-text > a {
+    margin-top: auto;
+}
+
+
+.article-text h2:hover {
+    opacity: 65%;
+    cursor: pointer;
+}
+
+.slider-carousel.culture li, .slider-carousel.nature li {
     background-color: rgba(44, 76, 73, 0.7);
 }
 
@@ -435,6 +493,14 @@ article div {
 
 .article-text h2, .article-text p, .article-text button {
     color: white;
+}
+
+.article-text p, .article-text button {
+    font-weight: 300;
+}
+
+.article-text button:hover, .article-text a:hover {
+    opacity: 65%;
 }
 
 .article-text p {
@@ -523,11 +589,16 @@ article .icon {
     
 }
 
+#article-popup img:hover {
+    opacity: 90%;
+}
+
 #article-popup h2, #article-popup button {
     color: rgb(240, 213, 204);
 }
 
-#article-popup button:hover {
+
+#article-popup button:hover, #article-popup h2:hover {
     color: rgb(238, 188, 169);
 }
 
@@ -540,7 +611,10 @@ article .icon {
     font-weight: 100;
     font-stretch: ultra-expanded;
     z-index: 101;
+    cursor: pointer;
 }
+
+
 
 #article-popup button {
     position: absolute;
@@ -550,16 +624,6 @@ article .icon {
     opacity: 80%;
 }
 
-#popup-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(44, 76, 73, 0.05);
-    z-index: 998;
-    cursor: pointer;
-}
 
 @media only screen and (max-width: 600px) {
     #article-popup {
@@ -569,40 +633,6 @@ article .icon {
     }
 }
 
-/*
-#article-popup > .btn-close-popup {
-    display: block;
-} */
-
-/* expanded article on 'show more'*/
-
-#expandedArticle {
-    width: 40vw;
-    height: fit-content;
-    margin: 0;
-    z-index: 999;
-    background: white;
-    padding: 5vw;
-    position: absolute;
-}
-
-#expandedArticle > h2 {
-    margin-bottom: 0;
-}
-
-#expandedArticle > .description, #expandedArticle > .closeBtn, .showMore {
-    display: block;
-}
-
-#expandedArticle > .showMore {
-    display: none;
-}
-
-@media screen and (max-width: 600px) {
-    #expandedArticle {
-        width: 90vw;
-    }
-}
 
 /* slider buttons: */
 

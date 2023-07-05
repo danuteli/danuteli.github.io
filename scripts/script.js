@@ -113,49 +113,37 @@ function articlePopUp(event) {
             event.target.classList.add('active');
             let img = article[1].querySelector('.article-img').cloneNode(true);
             let title = article[1].querySelector('h2').cloneNode(true);
+            img.addEventListener('click', renderContent);
+            title.addEventListener('click', renderContent);
             let closeBtn = document.createElement('button');
             closeBtn.innerHTML = 'close';
             closeBtn.classList.add('close');
             let popup = document.createElement('div');
-            //let background = document.createElement('div');
             popup.setAttribute('id', 'article-popup');
-            //background.setAttribute('id', 'popup-background');
+            popup.classList.add(`${event.target.classList[1]}`);
             
             popup.appendChild(img);
             popup.appendChild(title);
             popup.appendChild(closeBtn);
             document.body.appendChild(popup);
-            //document.body.appendChild(background);
             if (document.body.clientWidth > 600) {
-                
                 popup.style.top = `${position.top - 100}px`;
                 popup.style.left = `${position.left + 30}px`;
             }
             
-            
-            
-            //const btn = copyArticle.querySelector('.showMore');
-            //btn.addEventListener('click', toggleShowMore);
             return;
     
         } 
     }
-    // close popup on click on close button
-    /*
-    if (event.target.classList[0] == 'btn-close-popup') {
-        document.getElementById('article-popup').remove();
-    }
-    */
 }
+
 
 window.onclick = function(event) {
     if (document.getElementById('article-popup')) {
         let article = document.getElementById('article-popup');
-        //let background = document.getElementById('popup-background');
         if (!event.target.classList.contains('point') && !article.contains(event.target) || event.target.classList.contains('close')){
             article.remove();   
             (document.querySelector('.point.active').classList.remove('active'));
-            //background.remove();
         }
     }
     

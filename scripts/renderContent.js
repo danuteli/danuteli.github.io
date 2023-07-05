@@ -1,11 +1,25 @@
 // show more
 
 
+let images = document.querySelectorAll('.article-img');
+let titles = document.querySelectorAll('.article-text h2');
+images.forEach(image => image.addEventListener('click', renderContent));
+titles.forEach(title => title.addEventListener('click', renderContent));
 
 
 function renderContent(event) {
-    let sectionName = event.target.classList[1];
-    let article = document.querySelector(`article.${sectionName}`);
+    let article;
+    console.log(event.target);
+    if (event.target.classList[0] == 'showMore') {
+        let sectionName = event.target.classList[1];
+        article = document.querySelector(`article.${sectionName}`);
+    } else if (((event.target.parentNode).parentNode.getAttribute('id') == 'article-popup')) {
+        article = document.querySelector(`article.${(event.target.parentNode).parentNode.classList[0]}`);
+    } else if (((event.target.parentNode).getAttribute('id') == 'article-popup')) {
+        article = document.querySelector(`article.${(event.target.parentNode).classList[0]}`);
+    } else {
+        article = (event.target.parentNode).parentNode;
+    }
     
     let articleContent = {
         imgSrc: `${article.querySelector('img').getAttribute('src')}`,
