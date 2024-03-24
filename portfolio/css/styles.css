@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+header, footer, .section {
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    height: 100vh;
+}
+
+#phone {
+    display: none;
+}
+
+@media screen and (max-width: 550px) {
+    #desktop {
+        display: none;
+    }
+
+    #phone {
+        display: block;
+    }
+
+    .caroline .img-back {
+        display: none;
+    }
+
+    .dubulti .img-front {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header, footer {
+        height: 100vh;
+    }
+}
+
+
+.coraline {
+    background-color: rgba(129, 124, 87, .5);
+}
