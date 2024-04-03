@@ -9,44 +9,75 @@ html {
     overflow-x: hidden;
 }
 
-header, footer, .section {
+.section {
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
 
-.section {
-    height: 100vh;
+header img, footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#phone {
+.phone {
     display: none;
 }
 
 @media screen and (max-width: 550px) {
-    #desktop {
+    .desktop {
         display: none;
     }
 
-    #phone {
+    .phone {
         display: block;
     }
-
-    .caroline .img-back {
-        display: none;
-    }
-
-    .dubulti .img-front {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    header, footer {
-        height: 100vh;
-    }
 }
 
 
-.coraline {
-    background-color: rgba(129, 124, 87, .5);
+.utopie-preview, .play-btn, .close-btn {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.project-first {
+    animation: imagefade ease-in-out infinite 15s;
+}
+
+.play-btn {
+    animation: btnfade ease-in-out infinite 8s;
+}
+
+@keyframes imagefade {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity:1;
+      }
+    50% {
+        opacity:0;
+    }
+    95% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+@keyframes btnfade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
 }
