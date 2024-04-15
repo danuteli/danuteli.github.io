@@ -35,21 +35,8 @@ header img, footer img {
     }
 }
 
-
-.utopie-preview, .play-btn, .close-btn {
-    cursor: pointer;
-}
-
-.hide {
-    display: none;
-}
-
 .project-first {
     animation: imagefade ease-in-out infinite 15s;
-}
-
-.play-btn {
-    animation: btnfade ease-in-out infinite 8s;
 }
 
 @keyframes imagefade {
@@ -63,18 +50,6 @@ header img, footer img {
         opacity:0;
     }
     95% {
-        opacity:0;
-    }
-    100% {
-        opacity:1;
-    }
-}
-
-@keyframes btnfade {
-    0% {
-        opacity: 1;
-    }
-    50% {
         opacity:0;
     }
     100% {
