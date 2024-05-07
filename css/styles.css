@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-stretch: expanded;
+    color: rgba(129, 124, 87, .5);
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img, footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section .phone {
+    display: none;
+}
+
+.header video, .footer video {
+    position: absolute;
+    min-width: 100%; 
+}
+
+/* layout for desktop */ 
+.fancybox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw; 
+    cursor: pointer;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.f-carousel {
+    width: 70vw;
+    height: 45vw;
+    max-height: 80vh;
+}
+
+.f-carousel img {
+    width: 100%;
+}
+
+.pavasars > .fancybox {
+    height: 35vw;
+}
+
+.fancybox img {
+    height: 100%;
+}
+
+
+/* section titles */
+
+
+.text {
+    width: 15vw;
+    height: 35vw;
+}
+
+.text > h2 {
+    text-align: center;
+    font-size: 2rem;
+    width: 35vw;
+}
+
+.text-left {
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(-24vw);
+}
+
+.text-right {
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-4vw);
+}
+
+.header .text {
+    height: 90vh;
+}
+
+.text h1 {
+    width: 90vh;
+    font-size: 2.5rem;
+    text-align: left;
+}
+
+.name h1 {
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(calc(-90vh + 10vw));
+    z-index: -10;
+}
+
+.portfolio h1 {
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-5vw);
+}
+
+.header .fancybox {
+    cursor: default;
+}
+
+.footer {
+    align-items: end;
+}
+
+.footer h1 {
+    padding-bottom: 5rem;
+}
+
+
+/* tablet */
+@media screen and (max-width: 1200px) {
+    .text > h2 {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* mobile */
+@media screen and (max-width: 650px) {
+    .section > .desktop {
+        display: none;
+    }
+
+    .section .phone {
+        display: block;
+    }
+
+    main .text {
+        width: 90vw;
+        display: flex;
+        align-items: start;
+        padding: 1.5rem;
+    }
+
+    main .text > h2 {
+        width: 100%;
+        transform: rotate(0deg);
+        font-size: 2rem;
+    }
+
+    .text-left {
+        align-self: flex-end;
+    }
+
+    main .section {
+        flex-direction: column;
+    }
+
+    /* carousel for mobile */
+    .phone, .f-carousel {
+        height: fit-content;
+        width: 90vw;
+        height: 90vw;
+        --f-carousel-spacing: 0;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: 100%;
+}
+
+}
+
+
+
+
+
