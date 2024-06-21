@@ -28,8 +28,10 @@ function coord (numSquares) {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowWidth);
+  let cnv = createCanvas(700, 700);
   frameRate(1);
+  cnv.position(0, 0, 'relative');
+  cnv.parent('alg');
 }
 
 function draw() {
