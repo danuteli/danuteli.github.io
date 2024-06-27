@@ -1,0 +1,274 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-stretch: expanded;
+    color: rgba(129, 124, 87, .5);
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#static .header, #motion .header {
+    height: 15vh;
+}
+
+.nav {
+    width: 70vw;
+    height: 15vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 30;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgba(129, 124, 87, .5);
+}
+
+.nav a:hover {
+    color: black;
+}
+
+.nav .active {
+    color: black;
+}
+
+header img, footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section .phone {
+    display: none;
+}
+
+.header video, .footer video {
+    position: absolute;
+    min-width: 100%; 
+}
+
+#index a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 10rem;
+    z-index: 20;
+}
+
+#index a:hover {
+    color: rgba(129, 124, 87, .5);
+}
+
+.btn-static {
+    position: relative;
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(-50vw);
+}
+
+.btn-motion {
+    position: relative;
+    animation: motionBtn 8s infinite ease-in-out;
+}
+
+
+@keyframes motionBtn {
+    0%   {left: -150vw;}
+    100% {left: 150vw;}
+  }
+
+/* layout for desktop */ 
+.fancybox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw; 
+    cursor: pointer;
+    max-height: 80vh;
+    overflow: hidden;
+}
+
+.polis-iframe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.polis-iframe iframe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-carousel {
+    width: 70vw;
+    height: 45vw;
+    max-height: 80vh;
+}
+
+.f-carousel img {
+    width: 100%;
+}
+
+.pavasars > .fancybox, .covers > .fancybox {
+    height: 35vw;
+}
+
+.forts > .fancybox {
+    height: calc(70vw/2);
+    gap: 1rem;
+    padding: 6.55vw 0;
+}
+
+.fancybox img {
+    height: 100%;
+}
+
+
+/* section titles */
+
+
+.text {
+    width: 15vw;
+    height: 35vw;
+}
+
+.text > h2 {
+    text-align: center;
+    font-size: 2rem;
+    width: 35vw;
+}
+
+.text-left {
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(-24vw);
+}
+
+.text-right {
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-4vw);
+}
+
+.header .text {
+    height: 90vh;
+}
+
+.text h1 {
+    width: 90vh;
+    font-size: 3rem;
+    text-align: left;
+}
+
+.name h1 {
+    transform-origin: top right;
+    transform: rotate(-90deg) translateY(calc(-90vh + 10vw));
+    z-index: -10;
+}
+
+.portfolio h1 {
+    transform-origin: top left;
+    transform: rotate(90deg) translateY(-5vw);
+}
+
+.header .fancybox {
+    cursor: default;
+}
+
+.footer {
+    align-items: end;
+}
+
+.footer h1 {
+    padding-bottom: 5rem;
+    font-size: 3rem;
+}
+
+
+/* tablet */
+@media screen and (max-width: 1200px) {
+    .text > h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 650px) {
+    .section > .desktop {
+        display: none;
+    }
+
+    .section .phone {
+        display: block;
+    }
+
+    main .text {
+        width: 90vw;
+        display: flex;
+        align-items: start;
+        padding: 1.5rem;
+    }
+
+    main .text > h2 {
+        width: 100%;
+        transform: rotate(0deg);
+        font-size: 2rem;
+    }
+
+    #motion .header, #static .header {
+        position: absolute;
+    }
+
+    .nav {
+        transform: rotate(-90deg) translateY(2rem) translateX(-21rem);
+        width: 90vh;
+    }
+
+    .text-left {
+        align-self: flex-end;
+    }
+
+    main .section {
+        flex-direction: column;
+    }
+
+    /* carousel for mobile */
+    .phone, .f-carousel {
+        height: fit-content;
+        width: 90vw;
+        height: 90vw;
+        --f-carousel-spacing: 0;
+    }
+
+    .carousel-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #static .header, #motion .header {
+        height: 15vh;
+        align-items: end;
+    }
+
+}
+
+
+
+
+
+

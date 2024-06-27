@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>DLS</title>
+        <title>DLS | Portfolio</title>
         <link rel="icon" href="./media/fav.png" type="image">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="./styles.css">
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
         <link
           rel="stylesheet"
@@ -17,9 +17,8 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
         />
-
     </head>
-    <body>
+    <body id="index">
       <header class="section header">
 
         <video autoplay loop muted>
@@ -37,47 +36,86 @@
         </div>
         
       </header>
-        <main id="works">
-            
-          <!-- PAVASARS -->
-          <section class="section pavasars">
-            <!-- titles -->
-            <div class="text">
-              <h2 class="text-left">PAVASAR'S</h2>
-            </div>
 
-            <!-- pavasars desktop version -->
-            <div class="desktop fancybox">
-                <img href="./media/pavasars-first.gif" data-fancybox="gallery-4-d" src="./media/pavasars-first.gif" />
-                
-                <img href="./media/pavasars-second.gif" data-fancybox="gallery-4-d" src="./media/pavasars-second.gif" />
-            </div>
-            
+        <main>
 
-            <!-- pavasars mobile version -->
-            <div class="f-carousel phone">
-              <div
+          <!-- FORTS UN DZINTARS -->
+        <section class="section forts">
+          <!-- titles -->
+          <div class="text">
+            <h2 class="text-left">FORTS UN DZINTARS</h2>
+          </div>
+
+          <!-- forts n' dzintars desktop version -->
+          <div class="desktop fancybox">
+              <img href="./media/forti.gif" data-fancybox="gallery-5-d" src="./media/forti.gif" />
+              
+              <img href="./media/dzintars.gif" data-fancybox="gallery-5-d" src="./media/dzintars.gif" />
+
+              <img href="./media/saule.gif" data-fancybox="gallery-5-d" src="./media/saule.gif" />
+          </div>
+          
+
+          <!-- forts n' dzintars mobile version -->
+          <div class="f-carousel phone">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/forti.gif"
+              data-fancybox="gallery-5-m"
+              data-src="./media/forti.gif"
+            >
+              <img
+              class="carousel-img"
+                data-lazy-src="./media/forti.gif"
+              />
+            </div>
+            <div
                 class="f-carousel__slide"
-                data-thumb-src="./media/pavasars-first.gif"
-                data-fancybox="gallery-4-m"
-                data-src="./media/pavasars-first.gif"
+                data-thumb-src="./media/dzintars.gif"
+                data-fancybox="gallery-5-m"
+                data-src="./media/dzintars.gif"
               >
                 <img
-                class="carousel-img"
-                  data-lazy-src="./media/pavasars-first.gif"
+                  class="carousel-img"
+                  data-lazy-src="./media/dzintars.gif"
                 />
               </div>
               <div
-                  class="f-carousel__slide"
-                  data-thumb-src="./media/pavasars-second.gif"
-                  data-fancybox="gallery-4-m"
-                  data-src="./media/pavasars-second.gif"
-                >
-                  <img
-                    class="carousel-img"
-                    data-lazy-src="./media/pavasars-second.gif"
-                  />
-                </div>
+                class="f-carousel__slide"
+                data-thumb-src="./media/forti.gif"
+                data-fancybox="gallery-5-m"
+                data-src="./media/forti.gif"
+              >
+                <img
+                  class="carousel-img"
+                  data-lazy-src="./media/forti.gif"
+                />
+              </div>
+          </div>
+
+          <div class="text">
+            <h2 class="text-right">2024</h2>
+          </div>
+        </section>
+
+          <!-- POLIS -->
+          <section class="section polis">
+            <!-- titles -->
+            <div class="text">
+              <h2 class="text-left">M. POLIS INTERACTS</h2>
+            </div>
+
+            <!-- polis desktop version -->
+            <div class="desktop polis-iframe">
+              <iframe src="./polis/olas.html" title="M. POLIS INTERACTS" scrolling="no" style="border: none; height: 100%; width: 100%;">
+              </iframe>
+            </div>
+            
+
+            <!-- polis mobile version -->
+            <div class="phone polis-iframe">
+              <iframe src="./polis/olas.html" title="M. POLIS INTERACTS" scrolling="no" style="border: none; height: 100%; width: 100%;">
+              </iframe>
             </div>
 
             <div class="text">
@@ -85,39 +123,131 @@
             </div>
           </section>
 
-          <!-- UTOPIE -->
-          <section class="section utopie">
+          <!-- BOOK COVERS -->
+          <section class="section covers">
             <!-- titles -->
             <div class="text">
-              <h2 class="text-left">UTOPIE</h2>
+              <h2 class="text-left">BOOK COVERS</h2>
             </div>
 
-            <!-- utopie desktop version -->
-            <div class="fancybox desktop">
-              <a href="./media/utopie.mp4" data-fancybox="gallery-3-d" >
-                <video width="100%" autoplay loop muted>
-                  <source src="./media/utopie.mp4" type="video/mp4">
-                </video>
-              </a>
+            <!-- covers desktop version -->
+            <div class="desktop fancybox">
+                <img href="./media/cover-1.png" data-fancybox="gallery-6-d" src="./media/cover-1.png" />
+                
+                <img href="./media/cover-2.png" data-fancybox="gallery-6-d" src="./media/cover-2.png" />
             </div>
 
+            <!-- covers mobile version -->
+            <div class="f-carousel phone">
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/cover-1.png"
+                data-fancybox="gallery-6-m"
+                data-src="./media/cover-1.png"
+              >
+                <img
+                class="carousel-img"
+                  data-lazy-src="./media/cover-1.png"
+                />
+              </div>
+              <div
+                  class="f-carousel__slide"
+                  data-thumb-src="./media/cover-2.png"
+                  data-fancybox="gallery-6-m"
+                  data-src="./media/cover-2.png"
+                >
+                  <img
+                    class="carousel-img"
+                    data-lazy-src="./media/cover-2.png"
+                  />
+                </div>
+            </div>
 
-            <!-- utopie mobile version -->
-            <div class="fancybox phone">
-              <a href="./media/utopie.mp4" data-fancybox="gallery-3-m" >
-                <video width="100%" autoplay loop>
-                  <source src="./media/utopie-preview.mp4" type="video/mp4">
-                </video>
-              </a>
+            <div class="text">
+              <h2 class="text-right">2024</h2>
             </div>
             
 
-            <div class="text">
-              <h2 class="text-right">2021</h2>
-            </div>
-          
           </section>
 
+        <!-- PAVASARS -->
+        <section class="section pavasars">
+          <!-- titles -->
+          <div class="text">
+            <h2 class="text-left">PAVASAR'S</h2>
+          </div>
+
+          <!-- pavasars desktop version -->
+          <div class="desktop fancybox">
+              <img href="./media/pavasars-first.gif" data-fancybox="gallery-4-d" src="./media/pavasars-first.gif" />
+              
+              <img href="./media/pavasars-second.gif" data-fancybox="gallery-4-d" src="./media/pavasars-second.gif" />
+          </div>
+          
+
+          <!-- pavasars mobile version -->
+          <div class="f-carousel phone">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/pavasars-first.gif"
+              data-fancybox="gallery-4-m"
+              data-src="./media/pavasars-first.gif"
+            >
+              <img
+              class="carousel-img"
+                data-lazy-src="./media/pavasars-first.gif"
+              />
+            </div>
+            <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/pavasars-second.gif"
+                data-fancybox="gallery-4-m"
+                data-src="./media/pavasars-second.gif"
+              >
+                <img
+                  class="carousel-img"
+                  data-lazy-src="./media/pavasars-second.gif"
+                />
+              </div>
+          </div>
+
+          <div class="text">
+            <h2 class="text-right">2024</h2>
+          </div>
+        </section>
+
+        <!-- UTOPIE -->
+        <section class="section utopie">
+          <!-- titles -->
+          <div class="text">
+            <h2 class="text-left">UTOPIE</h2>
+          </div>
+
+          <!-- utopie desktop version -->
+          <div class="fancybox desktop">
+            <a href="./media/utopie.webm" data-fancybox="gallery-3-d" >
+              <video width="100%" autoplay loop muted>
+                <source src="./media/utopie.webm" type="video/mp4">
+              </video>
+            </a>
+          </div>
+
+
+          <!-- utopie mobile version -->
+          <div class="fancybox phone">
+            <a href="./media/utopie.webm" data-fancybox="gallery-3-m" >
+              <video width="100%" autoplay loop>
+                <source src="./media/utopie-preview.webm" type="video/mp4">
+              </video>
+            </a>
+          </div>
+          
+
+          <div class="text">
+            <h2 class="text-right">2021</h2>
+          </div>
+        
+        </section>
 
           <!-- CORALINE -->
           <section class="section coraline">
@@ -227,6 +357,11 @@
             
 
           </section>
+
+
+
+
+
         </main>
         <footer class="section footer">
           <video autoplay loop muted>
