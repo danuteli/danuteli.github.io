@@ -3,11 +3,14 @@ let startX, startY, endX, endY;
 let x1, y1, x2, y2;
 let diceResult;
 let downDirection, rightDirection;
+
 let border = 50;
 let numSquares = 3;
 let squareSize = 200;
 let lineDist = squareSize / 4;
+
 let dice = [1, 2, 3, 4, 5, 6];
+
 let sqareStartingCoords = {
   0: [coord(0), coord(0)],
   1: [coord(1), coord(0)],
@@ -19,12 +22,12 @@ let sqareStartingCoords = {
   7: [coord(1), coord(2)],
   8: [coord(2), coord(2)]
 }
+
 function coord (numSquares) {
   return border + (numSquares * squareSize);
 }
 
 function setup() {
-  createCanvas(windowWidth, windowWidth);
   let cnv = createCanvas(700, 700);
   frameRate(1);
   cnv.position(0, 0, 'relative');
@@ -32,18 +35,23 @@ function setup() {
 }
 
 function draw() {
+
   background('white');
   strokeWeight(2);
   stroke('rgba(206, 121, 101, 1)');
   circle(50, 50, 25);
   circle(650, 650, 25);
   
+
   for (let n = 0; n < numSquares * numSquares; n++) {
     let i = Math.floor(n / numSquares); // row index
     let j = n % numSquares; // column index
+
     x0 = (sqareStartingCoords[n])[0];
     y0 = (sqareStartingCoords[n])[1];
+
     // direction of the diagonal 
+
     if ((i + j) % 2 == 0) {
       startX = x0;
       startY = y0;
@@ -66,13 +74,16 @@ function draw() {
       endX = x0;
       endY = y0 + squareSize;
     }
+
     // fill each of the smaller squares with random lines based on dice roll's result
     x1 = startX;
     y1 = startY;
+
     while (true) {
       diceResult = random(dice);
       downDirection = startY < endY; 
       rightDirection = startX < endX;
+
       switch (diceResult) {
         case 1:
           x2 = x1;
@@ -137,6 +148,7 @@ function draw() {
         x1 = x2;
         y1 = y2;
       }
+
       // break the loop if the endpoint is reached
       if (x2 === endX && y2 === endY) {
         break;
@@ -144,3 +156,8 @@ function draw() {
     }
   }
 }
+
+
+
+
+
