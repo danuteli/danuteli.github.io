@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DLS | Animation</title>
+        <link rel="icon" href="../media/fav.png" type="image">
+        <link rel="stylesheet" href="../styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js">
+        </script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="body-category" id="animation">
+      <header>
+
+        <!-- navigation -->
+        <nav class="nav">
+          <a href="../">Home</a>
+          <a href="../photography/" >Photography</a>
+          <a href="../editorial-design/">Editorial Design</a>
+          <a href="." class="active"">Animation</a>
+          
+        </nav>
+        
+      </header>
+
+      <main class="main-category">
+
+        <!-- FORTS -->
+        <section class="project forts">
+          <div class="title phone">
+              <h2>POLIS</h2>
+              <p>2024</p>
+          </div>
+          <div class="polis-iframe">
+            <iframe src="./media/polis/olas.html" title="M. POLIS INTERACTS" scrolling="no" style="border: none; height: 100%; width: 100%;">
+            </iframe>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>POLIS</h2>
+              <p>2024</p>
+            </div>
+        </section>
+
+        <!-- FORTS -->
+        <section class="project forts">
+          <div class="title phone">
+              <h2>FORTS UN DZINTARS</h2>
+              <p>2024</p>
+          </div>
+          <div class="f-carousel">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/forti.gif"
+              data-fancybox="gallery-5-m"
+              data-src="./media/forti.gif"
+            >
+              <img
+              class="carousel-img"
+                data-lazy-src="./media/forti.gif"
+              />
+            </div>
+            <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/dzintars.gif"
+                data-fancybox="gallery-5-m"
+                data-src="./media/dzintars.gif"
+              >
+                <img
+                  class="carousel-img"
+                  data-lazy-src="./media/dzintars.gif"
+                />
+              </div>
+              <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/saule.gif"
+                data-fancybox="gallery-5-m"
+                data-src="./media/saule.gif"
+              >
+                <img
+                  class="carousel-img"
+                  data-lazy-src="./media/saule.gif"
+                />
+              </div>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>FORTS UN DZINTARS</h2>
+              <p>2024</p>
+            </div>
+        </section>
+
+        <!-- PAVASARS -->
+            <section class="project pavasars">
+              <div class="title phone">
+                  <h2>PAVASARS</h2>
+                  <p>2024</p>
+              </div>
+              <div class="f-carousel">
+                <div
+                  class="f-carousel__slide"
+                  data-thumb-src="./media/pavasars-first.gif"
+                  data-fancybox="gallery-2"
+                  data-src="./media/pavasars-first.gif"
+                >
+                  <img
+                  class="carousel-img"
+                    data-lazy-src="./media/pavasars-first.gif"
+                  />
+                </div>
+                <div
+                    class="f-carousel__slide"
+                    data-thumb-src="./media/pavasars-second.gif"
+                    data-fancybox="gallery-2"
+                    data-src="./media/pavasars-second.gif"
+                  >
+                    <img
+                      class="carousel-img"
+                      data-lazy-src="./media/pavasars-second.gif"
+                    />
+                  </div>
+              </div>
+              <!-- titles -->
+              <div class="title desktop">
+                  <h2>PAVASARS</h2>
+                  <p>2024</p>
+                </div>
+            </section>
+
+        <!-- UTOPIE -->
+        <section class="project utopie">
+          <!-- gleznot mobile version -->
+          <div class="title phone">
+              <h2>UTOPIE</h2>
+              <p>2021</p>
+          </div>
+          <div class="f-carousel">
+            <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/utopie-preview.webm"
+                data-fancybox="gallery-1"
+                data-src="./media/utopie.webm"
+              >
+                <video width="100%" autoplay loop>
+                  <source src="./media/utopie-preview.webm" type="video/mp4">
+                </video>
+              </div>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>UTOPIE</h2>
+              <p>2021</p>
+            </div>
+        </section>
+
+      </main>
+        
+      <script>
+
+      const containers = document.querySelectorAll(".f-carousel");
+      const options = { infinite: false };
+
+      
+
+      containers.forEach((container) => new Carousel(container, options));
+      
+
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+      });
+
+      
+
+
+
+
+      </script>
+    </body>
+</html>

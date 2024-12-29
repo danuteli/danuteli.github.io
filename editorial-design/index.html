@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DLS | Editorial Design</title>
+        <link rel="icon" href="../media/fav.png" type="image">
+        <link rel="stylesheet" href="../styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js">
+        </script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="body-category" id="editorial-design">
+      <header>
+
+        <!-- navigation -->
+        <nav class="nav">
+          <a href="../">Home</a>
+          <a href="../photography/" >Photography</a>
+          <a href="." class="active">Editorial Design</a>
+          <a href="../animation/">Animation</a>
+        </nav>
+        
+      </header>
+
+      <main class="main-category">
+
+        <!-- MURAKAMI -->
+        <section class="project free-will">
+          <div class="title phone">
+              <h2>FREE WILL</h2>
+              <p>2024</p>
+          </div>
+          <div class="f-carousel">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/free-will/free-will-thumb.png"
+              data-fancybox="gallery-4"
+              data-src="./media/free-will/free-will.png"
+            >
+              <img
+                data-lazy-src="./media/free-will/free-will-thumb.png"
+              />
+            </div>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>FREE WILL</h2>
+              <p>2024</p>
+            </div>
+        </section>
+
+        <!-- MURAKAMI -->
+        <section class="project murakami">
+          <div class="title phone">
+              <h2>MURAKAMI</h2>
+              <p>2024</p>
+          </div>
+          <div class="f-carousel">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/murakami.png"
+              data-fancybox="gallery-3"
+              data-src="./media/murakami.png"
+            >
+              <img
+              class="carousel-img"
+                data-lazy-src="./media/murakami.png"
+              />
+            </div>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>MURAKAMI</h2>
+              <p>2024</p>
+            </div>
+        </section>
+
+        <!-- ALCHEMIST -->
+            <section class="project alchemist">
+              <div class="title phone">
+                  <h2>ALCHEMIST</h2>
+                  <p>2024</p>
+              </div>
+              <div class="f-carousel">
+                <div
+                  class="f-carousel__slide"
+                  data-thumb-src="./media/alchemist.png"
+                  data-fancybox="gallery-2"
+                  data-src="./media/alchemist.png"
+                >
+                  <img
+                  class="carousel-img"
+                    data-lazy-src="./media/alchemist.png"
+                  />
+                </div>
+              </div>
+              <!-- titles -->
+              <div class="title desktop">
+                  <h2>ALCHEMIST</h2>
+                  <p>2024</p>
+                </div>
+            </section>
+
+        <!-- CORALINE -->
+        <section class="project coraline">
+          <!-- gleznot mobile version -->
+          <div class="title phone">
+              <h2>CORALINE</h2>
+              <p>2020</p>
+          </div>
+          <div class="f-carousel">
+            <div
+              class="f-carousel__slide"
+              data-thumb-src="./media/coraline/coraline-1.png"
+              data-fancybox="gallery-1"
+              data-src="./media/coraline/coraline-1.png"
+            >
+              <img
+              class="carousel-img"
+                data-lazy-src="./media/coraline/coraline-1.png"
+              />
+            </div>
+            <div
+                class="f-carousel__slide"
+                data-thumb-src="./media/coraline/coraline-2.png"
+                data-fancybox="gallery-1"
+                data-src="./media/coraline/coraline-2.png"
+              >
+                <img
+                  class="carousel-img"
+                  data-lazy-src="./media/coraline/coraline-2.png"
+                />
+              </div>
+          </div>
+          <!-- titles -->
+          <div class="title desktop">
+              <h2>CORALINE</h2>
+              <p>2020</p>
+            </div>
+        </section>
+
+      </main>
+        
+      <script>
+
+      const containers = document.querySelectorAll(".f-carousel");
+      const options = { infinite: false };
+
+      
+
+      containers.forEach((container) => new Carousel(container, options));
+      
+
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+      });
+
+      
+
+
+
+
+      </script>
+    </body>
+</html>
