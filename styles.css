@@ -199,20 +199,6 @@ html {
             overflow: hidden;
         }
 
-        .polis-iframe {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 35vw;
-            width: 35vw;
-        }
-
-        .polis-iframe iframe {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         .pavasars > .fancybox, .covers > .fancybox {
             height: 35vw;
             width: 35vw;
@@ -332,7 +318,7 @@ html {
                 margin-bottom: .5rem;
             }
 
-            .f-carousel, #editorial-design .f-carousel, #animation .f-carousel, .polis-iframe {
+            .f-carousel, #editorial-design .f-carousel, #animation .f-carousel {
                 width: 90vw;
                 height: 90vw;
             }
