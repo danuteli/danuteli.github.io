@@ -27,28 +27,28 @@ lib.ssMetadata = [
 
 
 
-(lib.CachedBmp_28 = function() {
+(lib.CachedBmp_30 = function() {
 	this.initialize(ss["olas_atlas_1"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_27 = function() {
+(lib.CachedBmp_29 = function() {
 	this.initialize(ss["olas_atlas_1"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_29 = function() {
+(lib.CachedBmp_28 = function() {
 	this.initialize(ss["olas_atlas_1"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
-(lib.CachedBmp_30 = function() {
+(lib.CachedBmp_27 = function() {
 	this.initialize(ss["olas_atlas_1"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
@@ -552,7 +552,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_3
-	this.instance = new lib.CachedBmp_29();
+	this.instance = new lib.CachedBmp_28();
 	this.instance.setTransform(-71.1,0,0.3389,0.3389);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(2));
@@ -2475,7 +2475,7 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(7).to({_off:false},0).to({alpha:1,mode:"independent"},12).to({alpha:0},10).to({_off:true},1).wait(7));
 
 	// Layer_3
-	this.instance_1 = new lib.CachedBmp_30();
+	this.instance_1 = new lib.CachedBmp_27();
 	this.instance_1.setTransform(-130.6,121.2,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(37));
@@ -2985,10 +2985,10 @@ if (reversed == null) { reversed = false; }
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_5},{t:this.shape_4}]}).wait(3));
 
 	// bg
-	this.instance_2 = new lib.CachedBmp_28();
+	this.instance_2 = new lib.CachedBmp_30();
 	this.instance_2.setTransform(0,0,0.5,0.5);
 
-	this.instance_3 = new lib.CachedBmp_27();
+	this.instance_3 = new lib.CachedBmp_29();
 	this.instance_3.setTransform(142.45,366.7,0.5,0.5);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2}]}).wait(3));
@@ -3027,7 +3027,7 @@ lib.properties = {
 	width: 630,
 	height: 630,
 	fps: 24,
-	color: "#1F1F1F",
+	color: "#C97E1F",
 	opacity: 1.00,
 	manifest: [
 		{src:"images/CachedBmp_26.png", id:"CachedBmp_26"},
