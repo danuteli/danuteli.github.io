@@ -63,6 +63,7 @@ html {
 #index {
     /*background-color: rgb(99, 105, 209);*/
     background-color: rgb(120, 111, 82);
+    overflow-x: hidden;
 }
 
 #index header > video{
