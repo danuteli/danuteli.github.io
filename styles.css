@@ -6,6 +6,7 @@
 
 html {
     scroll-behavior: smooth;
+    position: relative;
     overflow-x: hidden;
     font-family: "Outfit", serif;
     font-optical-sizing: auto;
@@ -63,6 +64,7 @@ html {
 #index {
     /*background-color: rgb(99, 105, 209);*/
     background-color: rgb(120, 111, 82);
+    position: relative;
     overflow-x: hidden;
 }
 
