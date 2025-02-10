@@ -65,6 +65,14 @@ html {
     background-color: rgb(120, 111, 82);
 }
 
+#index header > video{
+    top: 0;
+}
+
+#index footer > video{
+    bottom: -200vh;
+}
+
 .section {
     height: 100vh;
     display: flex;
