@@ -28,7 +28,12 @@ html {
 }
 
 #index footer > video {
-    bottom: -200vh;
+    position: absolute;
+    bottom: 0;
+}
+
+#index footer {
+    height: 100vh;
 }
 
 #index header > video::-webkit-media-controls, #index footer > video::-webkit-media-controls {
