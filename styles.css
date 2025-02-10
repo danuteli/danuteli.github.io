@@ -16,6 +16,25 @@ html {
     color: rgb(120, 111, 82);
 }
 
+#index {
+    /*background-color: rgb(99, 105, 209);*/
+    background-color: rgb(120, 111, 82);
+    position: relative;
+    overflow-x: hidden;
+}
+
+#index header > video {
+    top: 0;
+}
+
+#index footer > video {
+    bottom: -200vh;
+}
+
+#index header > video::-webkit-media-controls, #index footer > video::-webkit-media-controls {
+    display: none !important;
+}
+
 .index-title {
     height: 70vh;
     width: 100vw;
@@ -59,21 +78,6 @@ html {
 
 .phone {
     display: none;
-}
-
-#index {
-    /*background-color: rgb(99, 105, 209);*/
-    background-color: rgb(120, 111, 82);
-    position: relative;
-    overflow-x: hidden;
-}
-
-#index header > video{
-    top: 0;
-}
-
-#index footer > video{
-    bottom: -200vh;
 }
 
 .section {
