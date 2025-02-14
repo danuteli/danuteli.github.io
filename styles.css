@@ -52,18 +52,45 @@ html {
 
 .index-title a {
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes blink {
+    0% {opacity: 50%;}
+    50% {opacity: 100%;}
+    100% {opacity: 50%;}
+}
+
+.header-title a img {
+    opacity: 50%;
+    margin-top: 1rem;
+    animation: blink 2s infinite;
 }
 
 .index-title h1 {
-    color: white;
+    color: rgba(255, 255, 255, .5);
     font-weight: 100;
     text-align: center;
 }
 
-.header-title h1:hover, .footer-title a:hover {
+.header-title a:hover, .footer-title a:hover, .footer-title img:hover {
     cursor: pointer;
-    color: black;
+    color: rgba(255, 255, 255, 1);
     transition: 1s;
+    opacity: 100%;
+
+    & > img {
+        opacity: 100%;
+        transition: 1s;
+        animation: none;
+    }
+
+    & > h1 {
+        color: rgba(255, 255, 255, 1);
+        transition: 1s;
+    }
 }
 
 .footer-title a {
@@ -74,7 +101,11 @@ html {
     justify-content: center;
     align-items: center;
     margin-bottom: 5vh;
-    color: white;
+    color: rgba(255, 255, 255, .5);
+}
+
+.footer-title img {
+    opacity: 50%;
 }
 
 .body-category {
@@ -172,6 +203,10 @@ html {
             justify-content: end;
             flex-wrap: wrap;
             gap: 1vw;
+        }
+
+        .f-carousel  {
+            cursor: pointer;
         }
 
 /* CATEGORY -> PROJECT LAYOUT */
