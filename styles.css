@@ -385,8 +385,9 @@ html {
 
             .f-carousel img {
                 height: 100%;
+                display: inline-block;
+                width: auto;
             }
-
         }
 
 
