@@ -34,7 +34,7 @@ a, p, button {
 }
 
 header, footer {
-    height: 100dvh;
+    height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -50,7 +50,7 @@ header, footer {
 }
 
 #index footer {
-    height: 100dvh;
+    height: 100vh;
 }
 
 #index header > video::-webkit-media-controls, #index footer > video::-webkit-media-controls {
@@ -60,8 +60,8 @@ header, footer {
 /* HEADER / FOOTER TEXT */
 
 .header-title, .footer-content {
-    height: 80dvh;
-    width: 70dvw;
+    height: 80vh;
+    width: 70vw;
     display: flex;
     flex-direction: column;
     z-index: 99;
@@ -73,7 +73,7 @@ header, footer {
 }
 
 .header-title p {
-    width: 23dvw;
+    width: 23vw;
 }
 
 .footer-content {
@@ -136,7 +136,7 @@ header, footer {
 }
 
 .header-title-text {
-    width: 40dvw;
+    width: 40vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -145,7 +145,7 @@ header, footer {
 }
 
 .header-title-text div {
-    padding-top: 20dvh;
+    padding-top: 20vh;
 }
 
 .header-title-text p {
@@ -184,8 +184,8 @@ header, footer {
 /* NAV BAR */
 .main-nav {
   position: fixed;
-  bottom: env(safe-area-inset-bottom);
-  height: 80dvh;
+  transform: translateZ(0);
+  height: 80vh;
   right: 7%;
   top: 50%;
   transform: translateY(-50%);
@@ -229,9 +229,9 @@ header, footer {
   /* NAV OVERLAY */
     .main-nav {
         position: fixed;
-        bottom: env(safe-area-inset-bottom);
-        width: 100dvw;
-        height: 100dvh;
+        transform: translateZ(0);
+        width: 100vw;
+        height: 100vh;
         right: 0;
         writing-mode: horizontal-tb;
         z-index: 3;
@@ -241,8 +241,8 @@ header, footer {
         display: none; /* Hidden by default */
         top: 0;
         left: 0;
-        height: 100dvh;
-        width: 100dvw;
+        height: 100vh;
+        width: 100vw;
     }
 
     .main-nav.active {
@@ -254,7 +254,7 @@ header, footer {
         background-color: rgba(0, 0, 0, 0.85);
         display: flex;
         position: fixed;
-        bottom: env(safe-area-inset-bottom);
+        transform: translateZ(0);
         position: absolute;
         flex-direction: column;
         justify-content: center;
@@ -300,8 +300,8 @@ header, footer {
 /* MAIN LAYOUT */
 
         main {
-            width: 100dvw;
-            min-height: 100dvh;
+            width: 100vw;
+            min-height: 100vh;
             height: fit-content;
             display: flex;
             align-items: flex-start;
@@ -315,7 +315,7 @@ header, footer {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            padding-top: 15dvh;
+            padding-top: 15vh;
             gap: 1.2rem;
         }
 
@@ -353,7 +353,7 @@ header, footer {
 /* PORTFOLIO GALLERY LAYOUT */
 
         .gallery {
-        width: 70dvw;
+        width: 70vw;
         display: grid;
         grid-template-columns: 33% 33% 33%;
         gap: .7rem;
@@ -421,7 +421,7 @@ header, footer {
     font-size: 1rem;
     z-index: 100;
     position: fixed;
-    bottom: env(safe-area-inset-bottom);
+    transform: translateZ(0);
     writing-mode: vertical-rl;
     top: 10vh;
     right: 7%;
