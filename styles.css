@@ -391,6 +391,24 @@ header, footer {
             font-weight: 400;
         }
 
+        @media (hover: hover) and (pointer: fine) {
+            .gallery .item:hover .gallery-text-overlay,
+            .gallery .item:focus-within .gallery-text-overlay {
+                opacity: 1; transform: translateY(0);
+                pointer-events: auto;
+            }
+        }
+
+        /* Mobile: JS toggles this class */
+        .gallery .item.overlay-visible .gallery-text-overlay {
+        opacity: 1; transform: translateY(0);
+        pointer-events: auto;
+        }
+
+        /* Motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .gallery .gallery-text-overlay { transition: none; }
+        }
 
         .item:hover .gallery-text-overlay {
             opacity: 1;

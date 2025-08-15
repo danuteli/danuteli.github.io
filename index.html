@@ -274,7 +274,72 @@
         });
 
         
+        // TAP ON GALLERY - SHOW OVERLAY
+        (function () {
+          const gallery = document.querySelector('.gallery');
+          if (!gallery) return;
 
+          // Only change behavior on touch/no-hover environments
+          const isTouch = window.matchMedia('(hover: none)').matches;
+          if (!isTouch) return;
+
+          let armedItem = null;
+
+          function hideAll() {
+            gallery.querySelectorAll('.item.overlay-visible')
+                  .forEach(el => el.classList.remove('overlay-visible'));
+            armedItem = null;
+          }
+
+          // 1) Tap outside any item => hide overlays
+          document.addEventListener('click', (e) => {
+            if (!e.target.closest('.gallery .item')) hideAll();
+          }, { passive: true });
+
+          // 2) Intercept clicks on items *during capture* so we can stop inline onclick
+          gallery.addEventListener('click', function (e) {
+            const item = e.target.closest('.item');
+            if (!item) return;
+
+            const alreadyVisible = item.classList.contains('overlay-visible');
+
+            // First tap on this item: show overlay, block navigation
+            if (!alreadyVisible) {
+              e.preventDefault();
+              e.stopImmediatePropagation(); // prevent inline onclick on the item
+              hideAll();
+              item.classList.add('overlay-visible');
+              armedItem = item;
+              return;
+            }
+
+            // Second tap on same item: allow navigation (do nothing)
+            if (armedItem === item) {
+              // Let the inline onclick run and change location
+              armedItem = null;
+              return;
+            }
+
+            // If another card was armed: treat as a first tap on this one
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            hideAll();
+            item.classList.add('overlay-visible');
+            armedItem = item;
+          }, { capture: true }); // Capture is the key when inline onclick changes location
+
+          // Optional: hide overlay on Escape (e.g., iPad with keyboard)
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideAll();
+          });
+
+          // Optional: hide overlays when the page scrolls noticeably
+          let lastY = window.scrollY;
+          window.addEventListener('scroll', () => {
+            if (Math.abs(window.scrollY - lastY) > 10) hideAll();
+            lastY = window.scrollY;
+          }, { passive: true });
+        })();
 
 
 
