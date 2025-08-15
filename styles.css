@@ -17,11 +17,15 @@ html {
     font-family: "Outfit", serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-style: normal;
     font-stretch: expanded;
     color: var(--orange);
     background-color: var(--bg-light);
+}
+
+a, p, button {
+    font-size: 1.1rem;
 }
 
 #index {
@@ -599,8 +603,8 @@ header, footer {
                 margin-top: 25vw;
             }
 
-            .filters .filter-btn, .main-nav .overlay-menu a, html p {
-                font-size: 1.1rem;
+            .filters .filter-btn, .main-nav .overlay-menu a, html p, html a, html button {
+                font-size: 1rem;
                 font-weight: 400;
             }
 
