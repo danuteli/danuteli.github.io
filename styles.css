@@ -276,7 +276,9 @@ header, footer {
     /* Close button */
     .close-btn, .open-btn {
         position: fixed;
+        will-change: transform;
         -webkit-transform: translateZ(0);
+        bottom: env(safe-area-inset-bottom);
         top: 1rem;
         right: 1rem;
         font-size: 2rem;
