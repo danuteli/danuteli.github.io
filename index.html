@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>DLS | Portfolio</title>
-        <link rel="icon" href="./media/fav.png" type="image">
+        <link rel="icon" href="./media/favicon.png" type="image">
         <link rel="stylesheet" href="./styles.css">
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
         <link
@@ -17,62 +17,250 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body id="index">
-      <header class="section header">
+      <header class="section header" id="home">
 
         <video preload autoplay loop muted playsinline poster="">
-          <source src="./media/waves.mp4" type="video/mp4">
+          <source src="./media/waves-header.mp4" type="video/mp4">
         </video>
+
+        <nav class="main-nav" id="nav">
+          <ul>
+            <li class="icon">
+              <button class="open-btn" onclick="mobileNavigation()" aria-label="Toggle navigation">☰</button>
+            </li>
+            <div class="overlay" id="overlay">
+              <button class="close-btn" onclick="closeNavigation()">✕</button>
+              <ul class="overlay-menu">
+                <li><a href="#home" onclick="closeNavigation()">Home</a></li>
+                <li><a href="#portfolio" onclick="closeNavigation()">Portfolio</a></li>
+                <li><a href="#contact" onclick="closeNavigation()">Contact</a></li>
+              </ul>
+            </div>
+          </ul>
+        </nav>
+
 
         <!-- titles -->
         <div class="index-title header-title">
-          <a href="#menu">
-            <h1>ART PORTFOLIO <br> by Danute Liva Steimane</h1>
-            <img src="./media/arrow.png" style="width: 50px; height: 50px;" alt="">
-          </a>
+          <div class="header-title-text">
+            <div>
+              <h1>Art Portfolio</h1>
+              <h2>by Danute Līva Šteimane</h2>
+            </div>
+            
+            <p>A design student exploring editorial projects, illustration, and short animations.</p>
+          </div>
+          
         </div>
         
       </header>
 
         <main>
         
-          <section class="section" id="menu">
-            <div class="category" onclick="window.location.href = './photography'">
-              <h2>Photography</h2>
-            </div>
+          <section class="section portfolio" id="portfolio">
+            <div class="portfolio-menu filters">
 
-            <div class="category" onclick="window.location.href = './editorial-design'">
-              <h2>Editorial Design</h2>
-            </div>
+              <button class="category filter-btn active" data-filter="all">All
+              </button>
 
-            <div class="category" onclick="window.location.href = './animation'">
-              <h2>Animation</h2>
+              <button class="category filter-btn" data-filter="book">Book Design
+              </button>
+
+              <button class="category filter-btn" data-filter="illustration">Illustration
+              </button>
+
+              <button class="category filter-btn" data-filter="animation">Animation
+              </button>
+            </div>
+            
+            <div class="gallery">
+
+              <!-- INSOMNIA -->
+              <div class="item" data-category="illustration" onclick="document.location='./projects/nightmare.html'">
+                <div class="gallery-text-overlay">
+                  <h3>Sleepless Nightmare</h3>
+                  <p>Illustration about the sleepless nightmare.</p>
+                </div>
+                <img src="./media/portfolio/illustration/project-2/img-1.jpg" alt="">
+              </div>
+
+              <!-- CISKA -->
+              <div class="item" data-category="book" onclick="document.location='./projects/coxa.html'">
+                <div class="gallery-text-overlay">
+                  <h3><i>Uma Coxa em Tom Roxa</i></h3>
+                  <p>Two book series based on an absurd title.</p>
+                </div>
+                <img src="./media/portfolio/book-design/project-2/img-1.jpg" alt="">
+              </div>  
+              
+              <!-- LIBRA -->
+              <div class="item" data-category="illustration">
+                <div class="gallery-text-overlay" onclick="document.location='./projects/libra.html'">
+                  <h3>Editorial Illustration <i>Libra</i></h3>
+                  <p>An editorial interpretation of a poem by Charles Bukowski.</p>
+                </div>
+                <img src="./media/portfolio/illustration/project-3/img-1.jpg" alt="">
+              </div>
+              
+              <!-- MATAR ANIMATION -->
+              <div class="item" data-category="animation" onclick="document.location='./projects/instinct.html'">
+                <div class="gallery-text-overlay">
+                  <h3>Instinct</h3>
+                  <p>A short animation playing around about the pet's animal instinct.</p>
+                </div>
+                <video width="100%" height="100%" autoplay muted loop>
+                  <source src="./media/portfolio/animation/project-2/vid-1.mp4" type="video/mp4">
+                </video>
+              </div>
+              
+              <!-- LAW -->
+              <div class="item" data-category="book" onclick="document.location='./projects/law.html'">
+                <div class="gallery-text-overlay">
+                  <h3>Brochure <i>Law</i></h3>
+                  <p>An editorial interpretation of a poem by Charles Bukowski.</p>
+                </div>
+                <img src="./media/portfolio/book-design/project-1/img-1.jpg" alt="">
+              </div>  
+              
+              <!-- MATAR POSTERS -->
+              <div class="item" data-category="illustration" onclick="document.location='./projects/matar.html'">
+                <div class="gallery-text-overlay">
+                  <h3>Posters <i>Matar</i></h3>
+                  <p>A poster and tote bag design for a fictional music event, inspired by the character and name of my cat — Matar.</p>
+                </div>
+                <img src="./media/portfolio/illustration/project-1/img-1.jpg" alt="">
+              </div>
+              
+              <!-- NARCISES -->
+              <div class="item" data-category="animation" onclick="document.location='./projects/pavasaris.html'">
+                <div class="gallery-text-overlay">
+                  <h3>Pavasaris</h3>
+                  <p>Two short stop-motion animations inspired by the changing seasons — spring told through two color schemes.</p>
+                </div>
+                <video width="100%" height="100%" autoplay muted loop>
+                  <source src="./media/portfolio/animation/project-1/vid-1.mp4" type="video/mp4">
+                </video>
+              </div>
             </div>
 
           </section>
           
         </main>
-        <footer class="section footer">
+        <footer class="section footer" id="contact">
           <video preload autoplay loop muted playsinline poster=""> 
             <source src="./media/waves-footer.mp4" type="video/mp4">
           </video>
 
-          <div class="index-title footer-title">
-            <a href="https://www.instagram.com/danutesteimane/?igsh=MWRvd2xtbGR6Zm5jNg%3D%3D" target=”_blank”>
-              <img src="./media/insta-icon.png" style="width: 35px; height: 35px;" alt="">
-              <p>@danutesteimane</p>
-            </a>
+          <div class="footer-content">
+            <div class="footer-content-contact">
+              <h2>Contact</h2>
+
+              <div class="footer-icon email" onclick="window.location = 'mailto:danutelivasteimane@gmail.com';">
+              
+                <svg id="uuid-8534d255-a7ad-414e-9dc4-3af7f7346eb9" class="email-icon" data-name="GUIDES" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.27978 324.61632">
+                  <defs>
+                    <style>
+                      .uuid-c254b6b3-7717-414d-aaa1-7be0dde3b3a2 {
+                        fill: #c2643f;
+                        stroke-width: 0px;
+                      }
+                    </style>
+                  </defs>
+                  <path class="uuid-c254b6b3-7717-414d-aaa1-7be0dde3b3a2" d="M397.49451,85.89699c-.52683-4.12496-1.31185-8.22007-2.35556-12.25561-2.09736-8.09073-5.18844-15.82377-9.19413-23.00013-8.15042-14.67086-20.00854-27.10531-34.28168-35.95158C336.16722,5.08798,318.29583.00886,299.98717-.00109H98.30256c-18.31862.0199-36.19,5.10897-51.68593,14.71054-14.27313,8.84639-26.13125,21.28084-34.26178,35.9318C4.28403,65.13315.00995,81.61296,0,98.30159v128.01216c.00995,16.00261,3.94599,31.87625,11.39074,45.91096,9.01529,17.03649,22.70214,30.96188,39.59946,40.24544,14.39252,7.93178,30.75307,12.13621,47.31236,12.14616h201.68461c16.53939-.00995,32.89993-4.21438,47.30241-12.14616,16.91722-9.3134,30.61402-23.24874,39.61936-40.29518,7.4348-14.02464,11.3609-29.87838,11.37085-45.86121V98.30159c0-4.14486-.25844-8.28971-.78527-12.4046ZM98.27296,39.73742h201.71421c16.55929.00995,32.35321,7.03719,43.43601,19.2928-2.91224,6.77888-7.06716,12.89163-12.35486,18.17957l-90.51007,90.5199c-22.83124,22.84118-59.99554,22.84118-82.83673,0l-90.50983-90.5c-5.30783-5.30783-9.46252-11.42059-12.36505-18.18952,11.0828-12.26556,26.87672-19.2928,43.4263-19.30275ZM92.07041,158.26716l-52.3319,52.33203v-104.6541l52.3319,52.32208ZM299.97722,284.89771H98.30256c-17.81169,0-34.38093-7.92183-45.55303-21.7578,2.80304-8.93569,7.80244-17.16559,14.47188-23.8252l52.94828-52.94828,9.46252,9.47247c18.54745,18.49758,43.20766,28.68567,69.46801,28.68567h.0398c26.28025,0,50.97006-10.18809,69.50756-28.69562l9.47247-9.48242,52.94828,52.95823c6.66943,6.66956,11.66908,14.89945,14.47212,23.83514-11.19224,13.82602-27.76148,21.74785-45.56322,21.7578ZM306.21932,158.25734l52.3319-52.33215.00995,104.674-52.34185-52.34185Z"/>
+                </svg>
+                <a  class="email-icon-text" href="mailto:danutelivasteimane@gmail.com">danutelivasteimane@gmail.com</a>
+
+              </div>
+              <div class="footer-icon insta" onclick="window.open('https://www.instagram.com/danutesteimane.graphics/')">
+          
+                <svg id="uuid-dcab79f2-4052-4a49-9a08-64a9e1519ba6" class="insta-icon" data-name="GUIDES" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 398.27978 398.29787">
+                  <defs>
+                    <style>
+                      .uuid-3778e105-bb82-4c85-8223-9a1ad7578745 {
+                        fill: #c2643f;
+                        stroke-width: 0px;
+                      }
+
+                    </style>
+                  </defs>
+                  <path class="uuid-3778e105-bb82-4c85-8223-9a1ad7578745" d="M199.14894,96.17084c-56.81177,0-102.9781,46.18446-102.9781,102.9781s46.18446,102.9781,102.9781,102.9781,102.9781-46.18446,102.9781-102.9781-46.16633-102.9781-102.9781-102.9781ZM199.14894,262.0619c-34.74587.00501-62.91702-28.15802-62.92201-62.90388-.00501-34.74588,28.15803-62.91704,62.9039-62.92203,34.74585-.00501,62.91702,28.15803,62.922,62.9039.00501,34.74587-28.15802,62.91701-62.90388,62.92201ZM302.34431,72.25486c13.62837.01,24.66823,11.0661,24.65825,24.69447-.01001,13.62837-11.0661,24.66825-24.69447,24.65823-13.61425-.00998-24.64827-11.044-24.65825-24.65823,0-13.61454,9.23327-24.69447,24.69447-24.69447ZM279.62321,0H118.65656C53.14503.04992.04992,53.14503,0,118.65656v160.96665c.03994,65.51857,53.13797,118.62473,118.65656,118.67467h160.96665c65.51447-.05988,118.60667-53.1602,118.65657-118.67467V118.65656C398.2498,53.13675,345.14299.02996,279.62321,0ZM358.2327,279.62321c-.01001,43.41068-35.19882,78.59949-78.6095,78.6095H118.65656c-43.40485,0-78.59141-35.18656-78.59141-78.5914V118.65656c-.01-43.39483,35.16036-78.58142,78.55521-78.59141h161.00286c43.4007.01,78.58143,35.19073,78.5914,78.59141l.01809,160.96665Z"/>
+                </svg>
+                <a class="insta-icon-text">@danutesteimane.graphics</a>
+            </div>
             
-            <h1>2024</h1>
+            </div>
+            
+            <div class="footer-content-copyright">
+              <p>© Danute Līva Šteimane. All rights reserved. <br> Designed and implemented by me</p>
+            </div>
+            
+
           </div>
           
         </footer>
         <script>
 
+        // NAVBAR
+        const sections = document.querySelectorAll('header, section, footer');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        window.addEventListener('scroll', () => {
+          let current = '';
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (scrollY >= sectionTop) {
+              current = section.getAttribute('id');
+              if (!current && section.tagName.toLowerCase() === 'footer') {
+                current = 'contact';
+              }
+            }
+          });
+
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+              link.classList.add('active');
+            }
+          });
+        });
+
+        // PORTFOLIO MENU
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.gallery .item');
+
+        filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const filter = button.getAttribute('data-filter');
+            items.forEach(item => {
+              item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+            });
+          });
+        });
+
+
+        // HAMBURGER NAV
+        function mobileNavigation() {
+          const overlay = document.getElementById('overlay');
+          overlay.classList.add('active');
+          const mainNav = document.getElementById('nav');
+          mainNav.classList.add('active');
+        }
+
+        function closeNavigation() {
+          const overlay = document.getElementById('overlay');
+          overlay.classList.remove('active');
+          const mainNav = document.getElementById('nav');
+          mainNav.classList.remove('active');
+        }
+
+
+        /* FANCYAPPS AND CAROUSEL */
         const containers = document.querySelectorAll(".f-carousel");
         const options = { infinite: false };
 
