@@ -184,6 +184,7 @@ header, footer {
 /* NAV BAR */
 .main-nav {
   position: fixed;
+  bottom: env(safe-area-inset-bottom);
   height: 80vh;
   right: 7%;
   top: 50%;
@@ -228,6 +229,7 @@ header, footer {
   /* NAV OVERLAY */
     .main-nav {
         position: fixed;
+        bottom: env(safe-area-inset-bottom);
         width: 100vw;
         height: 100vh;
         right: 0;
@@ -252,6 +254,7 @@ header, footer {
         background-color: rgba(0, 0, 0, 0.85);
         display: flex;
         position: fixed;
+        bottom: env(safe-area-inset-bottom);
         position: absolute;
         flex-direction: column;
         justify-content: center;
@@ -418,6 +421,7 @@ header, footer {
     font-size: 1rem;
     z-index: 100;
     position: fixed;
+    bottom: env(safe-area-inset-bottom);
     writing-mode: vertical-rl;
     top: 10vh;
     right: 7%;
@@ -596,7 +600,7 @@ header, footer {
             }
 
             .header-title-text h1 {
-                font-size: 4rem;
+                font-size: 3.7rem;
             }
 
             .body-category main {
@@ -604,7 +608,7 @@ header, footer {
             }
 
             .filters .filter-btn, .main-nav .overlay-menu a, html p, html a, html button {
-                font-size: 1rem;
+                font-size: .9rem;
                 font-weight: 400;
             }
 
