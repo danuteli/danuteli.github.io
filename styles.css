@@ -365,6 +365,11 @@ header, footer {
         cursor: pointer;
         }
 
+        .gallery .item video {
+            height: 100%;
+            object-fit: fill;
+        }
+
         .gallery .gallery-text-overlay {
             position: absolute;
             top: 0;
@@ -652,11 +657,6 @@ header, footer {
 
             .gallery {
                 grid-template-columns: auto;
-            }
-
-            .gallery .item video {
-                height: 100%;
-                object-fit: fill;
             }
 
             .project-page .f-carousel {
