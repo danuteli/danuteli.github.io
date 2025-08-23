@@ -72,12 +72,13 @@ a, p, button {
 }
 
 .header-title {
-    justify-content: center;
+    justify-content: flex-start;
     align-items: start;
 }
 
 .header-title p {
     width: 23vw;
+
 }
 
 .footer-content {
@@ -145,19 +146,11 @@ a, p, button {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    justify-content: space-between;
-}
-
-.header-title-text div {
-    padding-top: 20vh;
+    justify-content: flex-start;
 }
 
 .header-title-text div > h1 {
     padding-bottom: 1rem;
-}
-
-.header-title-text p {
-    justify-self: flex-end;
 }
 
 .header-title-text h1 {
@@ -595,6 +588,10 @@ a, p, button {
                 font-size: 1.5rem;
             }
 
+            h3 {
+                font-size: .9rem;
+            }
+
             .gallery {
                 grid-template-columns: auto auto;
             }
@@ -615,21 +612,18 @@ a, p, button {
                 font-size: 5rem;
             }
 
-            .header-title-text div {
-                padding-top: 15vh;
+            .filters .filter-btn, .main-nav .overlay-menu a, html p, html a, html button {
+                font-size: .88rem;
+                font-weight: 400;
+            }
+
+            .project-page .f-carousel {
+                height: 50vh;
             }
         }
 
 /* MOBILE */
         @media screen and (max-width: 680px) {
-            .desktop {
-                display: none;
-            }
-
-            .phone {
-                display: block;
-            }
-
             .header-title-text h1 {
                 font-size: 3.7rem;
             }
@@ -667,16 +661,13 @@ a, p, button {
                 box-shadow: 0 2rem 2rem rgba(255, 255, 255, 0.5);
             }
 
-            .gallery {
-                grid-template-columns: auto;
-            }
-
+            
             .project-page .f-carousel {
                 height: 70vw;
                 --f-button-color: rgba(0,0,0,0);
                 --f-button-bg: rgba(0,0,0,0);
             }
-            
+
             .project-page .f-carousel__slide {
                 width: 100%;
                 height: 70vw;
@@ -691,6 +682,7 @@ a, p, button {
                 padding-right: 0;
                 object-fit: contain;
             }
+            
 
             .project-page header > button {
                 right: 3.5%;
